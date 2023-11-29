@@ -1,7 +1,16 @@
 
 :root {
-    --bg-color: #FFFF00;
-    --color: #0000FF;
+    --notificari-container-bg-color: hsl(60, 100%, 50%);
+    --following-container-bg-color: ;
+    --main-bg-color: ;
+    --navbar-bg-color: 
+    --button-color;
+    --button-hover-color;
+    --color-medium:;
+    --color-darker;
+    --text-color;
+    --header-color;
+    
 }
 
 body[data-theme="default-theme"] {
