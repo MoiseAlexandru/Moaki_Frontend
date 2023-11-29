@@ -1,17 +1,21 @@
+import Button from "react-bootstrap/Button";
 import "../css/navBarContainer.css";
+import ColorThemePicker from "./ColorThemePicker";
 
 export default function NavBarContainer() {
     return (
         <>
         
-        
-        <nav class="navigation-bar">
-            <img class="logo" src="moaki-logo.png" />
-            <span className="titleContainer">Moaki</span>
-            <a className="navButton" href="#">My Feed</a>
-            <a className="navButton" href="#">Find Friends</a>
-            <a className="navButton" href="#">Discover Locations</a>
-        </nav>
+            <nav className="navigation-bar">
+                <img className="logo" src="moaki-logo.png" />
+                <span className="titleContainer">Moaki</span>
+                <Button className="navButton">My Feed</Button>{' '}
+                <Button className="navButton">Find Friends</Button> {' '}
+                <Button className="navButton">Discover Locations</Button> {' '}
+                <div className = "navButton">
+                    <ColorThemePicker />
+                </div>
+            </nav>
         </>
     );
 }

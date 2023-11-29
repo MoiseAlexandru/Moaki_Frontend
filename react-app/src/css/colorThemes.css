@@ -1,15 +1,15 @@
 
 :root {
-    --notificari-container-bg-color: hsl(60, 100%, 50%);
-    --following-container-bg-color: ;
-    --main-bg-color: ;
-    --navbar-bg-color: 
-    --button-color;
-    --button-hover-color;
-    --color-medium:;
-    --color-darker;
-    --text-color;
-    --header-color;
+    --notificari-container-bg-color: #FFFFFF;
+    --following-container-bg-color: #FFFFFF;
+    --main-bg-color: #FFFFFF;
+    --navbar-bg-color: #FFFFFF;
+    --button-color: #FFFFFF;
+    --button-hover-color: #FFFFFF;
+    --color-medium: #FFFFFF;
+    --color-darker: #FFFFFF;
+    --text-color: #FFFFFF;
+    --header-color: #FFFFFF;
     
 }
 
