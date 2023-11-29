@@ -6,7 +6,8 @@
     height: 5rem;
     position: fixed;
     top: 0;
-    background-color: aliceblue;
+    background-color: #102A5C;
+    color: white;
     width: 100%;
 }
 .firstCol {

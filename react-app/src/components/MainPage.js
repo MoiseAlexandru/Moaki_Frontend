@@ -9,6 +9,9 @@ import "../css/mainPage.css";
 export default function MainPage({children}) {
     return (
         <>
+        <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster" />
+        </head>
             <Container className = "pageContainer">
                 <Row className = "navBar"><NavBarContainer /></Row>
                 <Row>

@@ -1,0 +1,21 @@
+
+.titleContainer {
+    font-family: "Lobster", sans-serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    margin-right: 3rem;
+}
+
+.logo {
+    margin-top: 0;
+    max-height: 4rem;
+    margin-bottom: 1rem;
+}
+
+.navButton {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    color: white;
+    text-decoration: none;
+}
