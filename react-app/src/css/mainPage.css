@@ -1,0 +1,42 @@
+.body {
+    margin-left: 0px;
+    border: 1px solid red;
+}
+.navBar {
+    height: 5rem;
+    position: fixed;
+    top: 0;
+    background-color: aliceblue;
+    width: 100%;
+}
+.firstCol {
+    width: 25% !important;
+    border: 1px solid black;
+    max-width: 25% !important;
+    position: fixed;
+    top: 5rem;
+}
+
+.secondCol {
+    width: 50% !important;
+    border: 1px solid black;
+    max-width: 50% !important;
+    margin-left: 25%;
+    margin-top: 5rem !important;
+    top: 5rem;
+}
+
+.thirdCol {
+    width: 25% !important;
+    border: 1px solid black;
+    max-width: 25% !important;
+    position: fixed;
+    top: 5rem;
+    right: 0;
+}
+
+.pageContainer {
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important; 
+}

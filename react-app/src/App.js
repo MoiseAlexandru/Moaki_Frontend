@@ -1,7 +1,13 @@
+import MainPage from "./components/MainPage";
+import Test from "./components/Test";
+import UsersList from "./components/UsersList";
+
 
 function App() {
   return (
-    <p> Acesta ar trebui sa fie frontendul... </p>
+    <MainPage>
+      <UsersList />
+    </MainPage>
   );
 }
 
