@@ -12,14 +12,17 @@
     margin-bottom: 1rem;
 }
 
-.navButton {
+nav > .btn-navButton {
     display: inline-block;
-    height: 5rem;
-    margin: 0;
+    height: 4rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
     color: var(--header-color);
     text-decoration: none;
-    height: 5rem;
+    border-color: var(--button-color);
+    margin-bottom: 1rem;
+    background-color: var(--button-color);
 }
-.navButton:hover {
+nav > .btn-navButton:hover {
     background-color: var(--button-hover-color);
 }

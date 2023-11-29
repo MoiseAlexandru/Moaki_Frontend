@@ -9,9 +9,9 @@ export default function NavBarContainer() {
             <nav className="navigation-bar">
                 <img className="logo" src="moaki-logo.png" />
                 <span className="titleContainer">Moaki</span>
-                <Button className="navButton">My Feed</Button>{' '}
-                <Button className="navButton">Find Friends</Button> {' '}
-                <Button className="navButton">Discover Locations</Button> {' '}
+                <Button variant="navButton">My Feed</Button>{' '}
+                <Button variant="navButton">Find Friends</Button> {' '}
+                <Button variant="navButton">Discover Locations</Button> {' '}
                 <div className = "navButton">
                     <ColorThemePicker />
                 </div>
