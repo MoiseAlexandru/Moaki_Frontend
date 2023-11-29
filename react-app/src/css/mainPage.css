@@ -1,43 +1,48 @@
 .body {
     margin-left: 0px;
-    border: 1px solid red;
 }
 .navBar {
     height: 5rem;
     position: fixed;
     top: 0;
-    background-color: #102A5C;
-    color: white;
+    background-color: var(--navbar-bg-color);
+    color: var(--text-color);
     width: 100%;
 }
 .firstCol {
     width: 25% !important;
-    border: 1px solid black;
+    border: 1rem solid var(--page-background);
     max-width: 25% !important;
     position: fixed;
     top: 5rem;
+    background-color: var(--notificari-container-bg-color);
+    height: 100%;
 }
 
 .secondCol {
     width: 50% !important;
-    border: 1px solid black;
+    border: 1rem solid var(--page-background);
     max-width: 50% !important;
     margin-left: 25%;
     margin-top: 5rem !important;
     top: 5rem;
+    background-color: var(--main-bg-color);
 }
 
 .thirdCol {
     width: 25% !important;
-    border: 1px solid black;
+    border: 1rem solid var(--page-background);
     max-width: 25% !important;
     position: fixed;
     top: 5rem;
     right: 0;
+    background-color: var(--following-container-bg-color);
+    height: 100%;
 }
 
 .pageContainer {
     margin: 0 !important;
     width: 100% !important;
     max-width: 100% !important; 
+    background-color: var(--page-background);
 }

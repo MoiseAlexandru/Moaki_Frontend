@@ -1,19 +1,29 @@
 
 :root {
-    --notificari-container-bg-color: hsl(60, 100%, 50%);
-    --following-container-bg-color: ;
-    --main-bg-color: ;
-    --navbar-bg-color: 
-    --button-color;
-    --button-hover-color;
-    --color-medium:;
-    --color-darker;
-    --text-color;
-    --header-color;
+    --notificari-container-bg-color: white;
+    --following-container-bg-color: white;
+    --main-bg-color: white;
+    --navbar-bg-color: #102A5C;
+    --button-color: #102A5C;
+    --button-hover-color: white;
+    --color-medium: white;
+    --color-darker: white;
+    --text-color: white;
+    --header-color: white;
+    --page-background: #C8E4F3;
     
 }
 
 body[data-theme="default-theme"] {
-    --bg-color: #FF0000;
-    --color: #964B00;
+    --notificari-container-bg-color: white;
+    --following-container-bg-color: white;
+    --main-bg-color: white;
+    --navbar-bg-color: #102A5C;
+    --button-color: #102A5C;
+    --button-hover-color: #102042;
+    --color-medium: white;
+    --color-darker: white;
+    --text-color: white;
+    --header-color: white;
+    --page-background: #DBECF3;
 }
