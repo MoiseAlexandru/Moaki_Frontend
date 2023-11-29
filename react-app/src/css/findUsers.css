@@ -1,0 +1,31 @@
+.userContainer {
+    background-color: var(--main-bg-color);
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+.profilepic {
+    height: 10rem;
+    width: 10rem;
+}
+
+.picContainer {
+    width: 30% !important;
+    max-width: 30% !important;
+}
+
+.infoContainer {
+    width: 70% !important;
+    max-width: 70% !important;
+}
+
+.btn-followButton{
+    width: 10rem;
+    background-color: var(--button-color);
+    color: var(--text-color);
+}
+
+.btn-followButton:hover {
+    background-color: var(--button-hover-color);
+    color: var(--text-color);
+}
