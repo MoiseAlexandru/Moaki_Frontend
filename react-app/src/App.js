@@ -4,6 +4,7 @@ import UsersList from "./components/UsersList";
 
 
 function App() {
+  document.body.setAttribute("data-theme", "default-theme");
   return (
     <MainPage>
       <UsersList />

@@ -1,0 +1,10 @@
+
+:root {
+    --bg-color: #FFFF00;
+    --color: #0000FF;
+}
+
+body[data-theme="default-theme"] {
+    --bg-color: #FF0000;
+    --color: #964B00;
+}
