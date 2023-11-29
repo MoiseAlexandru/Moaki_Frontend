@@ -14,14 +14,15 @@
 
 .navButton {
     display: inline-block;
-    height: 5rem;
+    height: 4rem;
     margin-left: 2rem;
     margin-right: 2rem;
     color: var(--header-color);
     text-decoration: none;
-    height: 5rem;
+    border-color: var(--button-color) !important;
     margin-bottom: 1rem;
+    background-color: var(--button-color) !important;
 }
 .navButton:hover {
-    background-color: var(--button-hover-color);
+    background-color: var(--button-hover-color) ;
 }

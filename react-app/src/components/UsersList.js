@@ -94,7 +94,7 @@ function User({userObj}) {
     //console.log(userObj);
 
     return (
-        <li>
+        <li className="userContainer">
             <img src = {userObj.photoName} alt = {userObj.username} />
             <div>
                 <h3> {userObj.fullname} </h3>
