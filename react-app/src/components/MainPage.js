@@ -12,6 +12,7 @@ export default function MainPage({children}) {
             <head>
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster" />
             </head>
+            {/*
             <Container className = "pageContainer">
                 <Row className = "navBar"><NavBarContainer /></Row>
                 <Row>
@@ -20,7 +21,13 @@ export default function MainPage({children}) {
                     <Col className = "thirdCol"> <FollowedByMeContainer /> </Col>
                 </Row>
             </Container>
-            
+            */}
+            <div className="navBar"><NavBarContainer /></div>
+            <div className = "pageContainer">
+                <div className = "firstCol"> <NotificationsContainer /> </div>
+                <div className = "secondCol"> {children} </div>
+                <div className = "thirdCol"> <FollowedByMeContainer /> </div>
+            </div>
         </>
     );
 }

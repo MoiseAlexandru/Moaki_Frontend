@@ -23,6 +23,6 @@ nav > .btn-navButton {
     margin-bottom: 1rem;
     background-color: var(--button-color);
 }
-nav > .btn-navButton:hover {
-    background-color: var(--button-hover-color);
+.btn-navButton:hover {
+    background-color: var(--button-hover-color) ;
 }

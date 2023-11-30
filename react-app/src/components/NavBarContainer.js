@@ -12,9 +12,6 @@ export default function NavBarContainer() {
                 <Button variant="navButton">My Feed</Button>{' '}
                 <Button variant="navButton">Find Friends</Button> {' '}
                 <Button variant="navButton">Discover Locations</Button> {' '}
-                <div className = "navButton">
-                    <ColorThemePicker />
-                </div>
             </nav>
         </>
     );
