@@ -1,4 +1,4 @@
-import FollowedByMeContainer from "./FollowedByMeContainer";
+import FollowedByMeContainer from "./follow/FollowedByMeContainer";
 import NotificationsContainer from "./NotificationsContainer";
 import NavBarContainer from "./NavBarContainer";
 import Container from 'react-bootstrap/Container';
