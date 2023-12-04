@@ -12,7 +12,7 @@
     margin-bottom: 1rem;
 }
 
-nav > .btn-navButton {
+nav .btn-navButton {
     display: inline-block;
     height: 4rem;
     margin-left: 2rem;
@@ -24,5 +24,11 @@ nav > .btn-navButton {
     background-color: var(--button-color);
 }
 .btn-navButton:hover {
-    background-color: var(--button-hover-color) ;
+    background-color: var(--button-hover-color);
 }
+
+a:hover {
+    color: inherit;
+}
+
+

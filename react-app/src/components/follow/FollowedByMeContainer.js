@@ -9,7 +9,7 @@ export default function FollowedByMeContainer() {
                 
                 <h2> Following </h2>
                 <div className="followingList">
-                    {usersData.map((user) => <FollowEntry user = {user} />)}
+                    {usersData.map((user) => <FollowEntry user = {user} key = {user.username} />)}
                 </div>
             </div>
         </div>

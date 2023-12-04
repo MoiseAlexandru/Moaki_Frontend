@@ -1,6 +1,6 @@
 import { useState } from "react";
 import LocationResult from "./LocationResult";
-import "../css/locations.css";
+import "../../css/locations.css";
 
 const locationList = [
         {
