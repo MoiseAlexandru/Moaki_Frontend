@@ -5,7 +5,7 @@ function returnEmpty() {
     return []
 }
 
-export default function Searchbar({onSelect, filterFunction = returnEmpty, resultEntry: ResultEntry}) {
+export default function Searchbar({onSelect, onEnter, filterFunction = returnEmpty, resultEntry: ResultEntry}) {
     const [query, setQuery] = useState("");
     const results = filterFunction(query);
     //console.log(filterFunction(query));
@@ -16,14 +16,13 @@ export default function Searchbar({onSelect, filterFunction = returnEmpty, resul
 
     function handleKeyDown(event) {
         if(event.key === "Enter") {
-            onSelect(query, false);
+            onEnter(query);
         }
     }
 
     function handleResultSelect(result) {
         setQuery(result)
-        console.log("result:", result)
-        onSelect(result, true);
+        onSelect(result);
     }
 
     return (

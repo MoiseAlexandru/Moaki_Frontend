@@ -1,13 +1,13 @@
 import MainPage from "./components/MainPage";
 import Test from "./components/Test";
-import UserPage from "./components/users/UserPage";
-import LocationPage from "./components/locations/LocationPage";
+import UserPage from "./components/users/UserSearchPage";
+import LocationSearchPage from "./components/locations/LocationSearchPage";
 
 function App() {
   document.body.setAttribute("data-theme", "default-theme");
   return (
     <MainPage>
-      <LocationPage />
+      <LocationSearchPage />
     </MainPage>
   );
 }

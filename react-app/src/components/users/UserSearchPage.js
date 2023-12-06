@@ -1,16 +1,17 @@
 import { useEffect, useRef, useState } from "react";
-import ColorThemePicker from "../ColorThemePicker";
+import ColorThemePicker from "../ColorThemePicker.js";
 import "../../css/findUsers.css";
 
-import { usersData } from "../../dummydata";
+import { usersData } from "../../dummydata.js";
 import UserResult from "./UserResult.js"
 import { useNavigate } from "react-router-dom";
 import userFilter from "../../api/user/userFilter.js";
 import Searchbar from "../Searchbar.js";
+import UserSearchResults from "./UserSearchResults.js";
 
 export default function UserPage() {
     
-    const users = usersData;
+    const [users, setUsers] = useState([]);
     const numUsers = users.length;
     const [query, setQuery] = useState("");
     const navigate = useNavigate();
@@ -20,19 +21,20 @@ export default function UserPage() {
         setQuery(newText);
     }
 
-    function handleUserSelect(user, fromClick) {
+    function handleUserSelect(user) {
         setQuery(user.username);
+        navigate(`/user/${user.username}`)
+    }
 
-        if(fromClick === true) {
-            navigate(`/user/${user.username}`)
-            return;
-        }
+    function handleUserEnter(input) {
+        const newUserList = userFilter(input);
+        setUsers(newUserList);
     }
 
     return (
         <main className = "userList">
             <h2> Search Users... </h2>
-            <Searchbar onSelect = {handleUserSelect} filterFunction = {userFilter} resultEntry={UserResult}/>
+            <Searchbar onSelect = {handleUserSelect} onEnter = {handleUserEnter} filterFunction = {userFilter} resultEntry={UserResult}/>
 
 
             {numUsers > 0 ? (
@@ -41,11 +43,11 @@ export default function UserPage() {
                     🗿 Search, follow and connect with travelers worldwide! 🗿
                     </p>
                     
-                    {/* <ul className = "users">
+                    <ul className = "users">
                         {users.map((user) => (
-                            <User userObj = {user} key = {user.username} />
+                            <UserSearchResults userObj = {user} key = {user.username} />
                         ))}
-                    </ul> */}
+                    </ul>
                 </>
             ): <p> There are no users yet... 😔</p>}
         </main>
