@@ -1,6 +1,6 @@
 import MainPage from "./components/MainPage";
 import Test from "./components/Test";
-import UsersList from "./components/UsersList";
+import UserPage from "./components/users/UserPage";
 import LocationPage from "./components/locations/LocationPage";
 
 function App() {

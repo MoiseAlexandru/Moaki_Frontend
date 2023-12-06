@@ -22,6 +22,7 @@ export default function Searchbar({onSelect, filterFunction = returnEmpty, resul
 
     function handleResultSelect(result) {
         setQuery(result)
+        console.log("result:", result)
         onSelect(result, true);
     }
 
@@ -31,7 +32,7 @@ export default function Searchbar({onSelect, filterFunction = returnEmpty, resul
             
             <div className="resultsBox">
                 {results.map(result => (
-                    <li key = {result.id} onClick = {() => {handleResultSelect(result.name)}}>
+                    <li key = {result.id} onClick = {() => {handleResultSelect(result)}}>
                         <ResultEntry result = {result}  />
                     </li>
                 ))}

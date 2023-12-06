@@ -4,7 +4,7 @@ import NavBarContainer from "./NavBarContainer";
 import "../css/mainPage.css";
 import {HashRouter, Route, Routes} from "react-router-dom";
 import LocationPage from "./locations/LocationPage";
-import UsersList from "./UsersList";
+import UserPage from "./users/UserPage";
 
 export default function MainPage() {
     return (
@@ -20,7 +20,7 @@ export default function MainPage() {
             <div className="secondCol">
                 <Routes>
                     <Route exact path = "/search-location" element = {<LocationPage />} />
-                    <Route exact path = "/users" element = {<UsersList />} />
+                    <Route exact path = "/users" element = {<UserPage />} />
                 </Routes>
             </div>
         </HashRouter>

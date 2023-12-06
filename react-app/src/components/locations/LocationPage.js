@@ -13,13 +13,14 @@ export default function LocationPage() {
     console.log(location);
 
 
-    function handleLocationSelect(newLocation, fromClick) {
+    function handleLocationSelect(location, fromClick) {
+        const newLocation = location.name;
         setLocation(newLocation);
         if(fromClick === true) {
             navigate(`/location/${newLocation}`);
             return;
         }
-        <LocationSearchResults query = {newLocation} />
+        // <LocationSearchResults query = {newLocation} />
     }
 
     return (

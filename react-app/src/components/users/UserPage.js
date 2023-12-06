@@ -1,28 +1,39 @@
 import { useEffect, useRef, useState } from "react";
-import { useKey } from "./UseKey";
-import Button from "react-bootstrap/Button";
-import "../css/findUsers.css";
-import ColorThemePicker from "./ColorThemePicker";
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import { usersData } from "../dummydata";
+import ColorThemePicker from "../ColorThemePicker";
+import "../../css/findUsers.css";
 
-function UsersList() {
+import { usersData } from "../../dummydata";
+import UserResult from "./UserResult.js"
+import { useNavigate } from "react-router-dom";
+import userFilter from "../../api/user/userFilter.js";
+import Searchbar from "../Searchbar.js";
+
+export default function UserPage() {
     
     const users = usersData;
     const numUsers = users.length;
     const [query, setQuery] = useState("");
+    const navigate = useNavigate();
     console.log(query);
 
     function handleSearchChange(newText) {
         setQuery(newText);
     }
 
+    function handleUserSelect(user, fromClick) {
+        setQuery(user.username);
+
+        if(fromClick === true) {
+            navigate(`/user/${user.username}`)
+            return;
+        }
+    }
+
     return (
         <main className = "userList">
             <h2> Search Users... </h2>
-            <Search query = {query} handleChange = {handleSearchChange} />
+            <Searchbar onSelect = {handleUserSelect} filterFunction = {userFilter} resultEntry={UserResult}/>
+
 
             {numUsers > 0 ? (
                 <>
@@ -30,38 +41,18 @@ function UsersList() {
                     🗿 Search, follow and connect with travelers worldwide! 🗿
                     </p>
                     
-                    <ul className = "users">
+                    {/* <ul className = "users">
                         {users.map((user) => (
                             <User userObj = {user} key = {user.username} />
                         ))}
-                    </ul>
+                    </ul> */}
                 </>
             ): <p> There are no users yet... 😔</p>}
         </main>
     );
 }
-export default UsersList;
 
-function User({userObj}) {
-    //console.log(userObj);
 
-    return (
-        <Container className="userContainer">
-            <Row>
-            <Col className="picContainer">
-            <img src = {userObj.photoname} alt = {userObj.username} className="profilepic"/>
-            </Col>
-            
-            <Col className="infoContainer">
-                <Row><h3 className="fullname"> {userObj.fullname} </h3></Row>
-                <Row><h4 className="username"> {userObj.username} </h4></Row>
-                <Row><p className="bio"> {userObj.bio} </p></Row>
-                <Row><Button variant="followButton">Follow me! </Button></Row>
-            </Col>
-            </Row>
-        </Container>
-    );
-}
 
 function Search({query, handleChange}) {
     /*
