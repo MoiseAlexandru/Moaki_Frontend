@@ -31,7 +31,7 @@ export default function Searchbar({onSelect, onEnter, filterFunction = returnEmp
             
             <div className="resultsBox">
                 {results.map(result => (
-                    <li key = {result.id} onClick = {() => {handleResultSelect(result)}}>
+                    <li key = {result[Object.keys(result)[0]]} onClick = {() => {handleResultSelect(result)}}>
                         <ResultEntry result = {result}  />
                     </li>
                 ))}
