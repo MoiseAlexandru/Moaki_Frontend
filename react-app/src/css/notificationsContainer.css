@@ -1,6 +1,15 @@
 
+
+.bigContainer {
+    margin-top: 5rem;
+    height: 40rem;
+}
+
 .notificationsContainer {
-    /* width: 100%; */
-    border-right: 3px solid lightgray;
-    color: var(--color);
+    position: relative;
+    height: 100%;
+}
+
+.followedByMeContainer h2 {
+    text-align: center;
 }

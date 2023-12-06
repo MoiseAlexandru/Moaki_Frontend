@@ -10,9 +10,11 @@ export default function NavBarContainer() {
             <nav className="navigation-bar">
                 <img className="logo" src="moaki-logo.png" />
                 <span className="titleContainer">Moaki</span>
-                <Button variant="navButton">My Feed</Button>
+                <Button variant="navButton" onClick={() => {navigate("/my-feed")}}>My Feed</Button>
+                <Button variant="navButton" onClick={() => {navigate("/more-posts")}}>More Posts</Button>
                 <Button variant="navButton" onClick={() => {navigate("/users")}}> Find Friends </Button>
                 <Button variant="navButton" onClick={() => {navigate("/search-location")}}> Discover Locations </Button>
+                <Button variant="navButton" onClick={() => {navigate("/my-profile")}}>My Profile</Button>
             </nav>
         </>
     );

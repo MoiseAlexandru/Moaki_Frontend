@@ -34,14 +34,12 @@ export default function UserPage() {
     return (
         <main className = "userList">
             <h2> Search Users... </h2>
+            <p>🗿 Search, follow and connect with travelers worldwide! 🗿</p>
             <Searchbar onSelect = {handleUserSelect} onEnter = {handleUserEnter} filterFunction = {userFilter} resultEntry={UserResult}/>
-
 
             {numUsers > 0 ? (
                 <>
-                    <p>
-                    🗿 Search, follow and connect with travelers worldwide! 🗿
-                    </p>
+                    
                     
                     <ul className = "users">
                         {users.map((user) => (
@@ -57,16 +55,6 @@ export default function UserPage() {
 
 
 function Search({query, handleChange}) {
-    /*
-    const inputEl = useRef(null);
-
-    useKey("Enter", function() {
-        if(document.activeElement === inputEl.current)
-            return;
-        inputEl.current.focus();
-        setQuery("");
-    });
-    */
     
     return (
         <input

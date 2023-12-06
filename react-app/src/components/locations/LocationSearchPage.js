@@ -25,6 +25,8 @@ export default function LocationSearchPage() {
 
     return (
         <>
+        <h2> Discover Locations... </h2>
+        <p>🗿 Discover new travel destionation today! 🗿</p>
             <Searchbar onSelect = {handleLocationSelect} onEnter = {handleLocationEnter} filterFunction = {locationFilter} resultEntry={LocationResult}/>
             
             {displayedLocations.map((location) => <LocationSearchResult location = {location} key = {location.name} />)}
