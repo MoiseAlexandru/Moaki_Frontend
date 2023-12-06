@@ -1,0 +1,19 @@
+.locationContainer {
+    background-color: var(--main-bg-color);
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+.locationName {
+    text-align: center;
+}
+
+.btn-viewLocationButton{
+    width: 100%;
+    background-color: var(--button-color);
+    color: var(--text-color);
+}
+.btn-viewLocationButton:hover {
+    background-color: var(--button-hover-color);
+    color: var(--text-color);
+}
