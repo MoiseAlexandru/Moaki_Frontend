@@ -1,0 +1,29 @@
+
+.resultsBox {
+    background-color: var(--color-medium);
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+}
+
+.searchbar {
+    width: 100%;
+}
+
+.resultEntry {
+    width: 100%;
+    padding: 1rem;
+}
+
+.containerSearchAndResults {
+    position: relative;
+}
+
+li {
+    list-style-type: none;
+    border-radius: 10px;
+}
+
+li:hover {
+    background-color: #F0F0F0;
+}

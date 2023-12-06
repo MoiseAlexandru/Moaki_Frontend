@@ -1,12 +1,12 @@
 
-export default function LocationResult({location}) {
+export default function LocationResult({result}) {
     return (
         <div className = "resultEntry">
-            <span>{location.name}</span>
-            <span>{location.city}</span>
-            <span>{location.country}</span>
-            <span>{location.reviews}</span>
-            <span>{location.rating}</span>
+            <span>{result.name}</span>
+            <span>{result.city}</span>
+            <span>{result.country}</span>
+            <span>{result.reviews}</span>
+            <span>{result.rating}</span>
         </div>
     );
 }
