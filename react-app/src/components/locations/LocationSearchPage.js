@@ -11,7 +11,7 @@ export default function LocationSearchPage() {
     const navigate = useNavigate();
 
     function handleLocationSelect(selectedLocation) {
-        const newLocation = selectedLocation.name;
+        const newLocation = selectedLocation.id;
         console.log(newLocation);
         navigate(`/location/${newLocation}`);
         // <LocationSearchResults query = {newLocation} />
