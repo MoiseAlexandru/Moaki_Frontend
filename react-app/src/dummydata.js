@@ -154,7 +154,7 @@ export const postList = [
       "locationID": 3,
       "username": "Traveler123",
       "description": "A fantastic experience! Loved the atmosphere and friendly staff.",
-      "photopath": "https://example.com/image1.jpg",
+      "photopath": "postsPics/photopath1.webp",
       "score": 4.2,
       "likes": 15,
       "comments": []

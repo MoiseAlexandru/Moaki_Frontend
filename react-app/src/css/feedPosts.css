@@ -1,0 +1,62 @@
+.postContainer {
+    background-color: var(--main-bg-color);
+    margin-top: 1rem;
+    /* padding: 1rem; */
+    border: 2px solid lightgray;
+    border-radius: 15px;
+}
+.picContainer {
+    width: 60% !important;
+    max-width: 60% !important;
+    padding: 1rem;
+}
+
+.postPic {
+    height: 25rem;
+    width: 25rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.5rem;
+}
+
+.postDetails {
+    width: 40% !important;
+    max-width: 40% !important;
+}
+.postLocation {
+    padding: 1rem;
+}
+
+.postCreator {
+    padding: 1rem;
+}
+
+.postDescription {
+    padding: 1rem;
+}
+.postScore {
+    padding: 1rem;
+}
+
+.postLikes {
+    padding: 1rem;
+}
+
+.postAnalytics {
+    padding: 0.5rem;
+    background-color: var(--button-color);
+    color: var(--main-bg-color);
+}
+
+.btn-viewPostButton{
+    width: 10rem;
+    background-color: var(--button-color);
+    color: var(--text-color);
+    padding: 1rem;
+}
+
+.btn-viewPostButton:hover {
+    background-color: var(--button-hover-color);
+    color: var(--text-color);
+}
