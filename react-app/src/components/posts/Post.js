@@ -7,8 +7,6 @@ import "../../css/feedPosts.css"
 export default function Post({post}) {
     return (
         <div>
-            Aceasta este postarea:
-            {/* {JSON.stringify(post)} */}
             <Container className = "postContainer">
             <Row>
                 <Col className = "picContainer">

@@ -66,12 +66,15 @@
     position: fixed;
     top: 0;
     bottom: 0;
+    
+    
 }
 
 .firstCol {
     left: 0;
     border: 1rem solid var(--page-background);
     background-color: var(--notificari-container-bg-color);
+
 }
 
 .thirdCol {

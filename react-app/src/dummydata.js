@@ -164,7 +164,7 @@ export const postList = [
       "locationID": 3,
       "username": "FoodieFanatic",
       "description": "Delicious food and great service. Will definitely come back!",
-      "photopath": "https://example.com/image2.jpg",
+      "photopath": "postsPics/photopath2.webp",
       "score": 3.8,
       "likes": 20,
       "comments": []
@@ -174,7 +174,7 @@ export const postList = [
       "locationID": 3,
       "username": "AdventureExplorer",
       "description": "An amazing spot! Breathtaking views and exciting activities.",
-      "photopath": "https://example.com/image3.jpg",
+      "photopath": "postsPics/photopath3.webp",
       "score": 5.0,
       "likes": 12,
       "comments": []
@@ -184,7 +184,7 @@ export const postList = [
       "locationID": 4,
       "username": "CulturalNomad",
       "description": "Immersive cultural experience. Loved the art and ambiance.",
-      "photopath": "https://example.com/image4.jpg",
+      "photopath": "postsPics/photopath4.jpeg",
       "score": 4.5,
       "likes": 18,
       "comments": []
@@ -194,7 +194,7 @@ export const postList = [
       "locationID": 4,
       "username": "NatureEnthusiast",
       "description": "Serene and peaceful environment. Perfect for nature lovers!",
-      "photopath": "https://example.com/image5.jpg",
+      "photopath": "postsPics/photopath5.jpeg",
       "score": 3.2,
       "likes": 10,
       "comments": []
@@ -204,7 +204,7 @@ export const postList = [
       "locationID": 4,
       "username": "EpicureanNomad",
       "description": "Delightful flavors and unique dishes. A culinary adventure!",
-      "photopath": "https://example.com/image6.jpg",
+      "photopath": "postsPics/photopath6.webp",
       "score": 4.8,
       "likes": 25,
       "comments": []
@@ -214,7 +214,7 @@ export const postList = [
       "locationID": 5,
       "username": "UrbanExplorer",
       "description": "Vibrant city life! Great shopping and entertainment options.",
-      "photopath": "https://example.com/image7.jpg",
+      "photopath": "postsPics/photopath7.webp",
       "score": 3.0,
       "likes": 8,
       "comments": []
@@ -224,7 +224,7 @@ export const postList = [
       "locationID": 5,
       "username": "SunsetChaser",
       "description": "Breathtaking sunset views. A perfect romantic getaway.",
-      "photopath": "https://example.com/image8.jpg",
+      "photopath": "postsPics/photopath8.webp",
       "score": 4.0,
       "likes": 16,
       "comments": []
@@ -234,7 +234,7 @@ export const postList = [
       "locationID": 5,
       "username": "HistoryBuff",
       "description": "Rich in history and culture. Must-visit historical landmarks.",
-      "photopath": "https://example.com/image9.jpg",
+      "photopath": "postsPics/photopath9.webp",
       "score": 4.5,
       "likes": 22,
       "comments": []
