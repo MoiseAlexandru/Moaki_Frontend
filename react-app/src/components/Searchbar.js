@@ -6,11 +6,12 @@ function returnEmpty() {
 }
 
 export default function Searchbar({onSelect, onEnter, filterFunction = returnEmpty, resultEntry: ResultEntry, placeholderText = "Search here...", forcedValue = ""}) {
-    const [query, setQuery] = useState("");
+    const [query, setQuery] = useState(forcedValue);
     const results = filterFunction(query);
     const [searchbarFocus, setSearchbarFocus] = useState(false);
-    console.log(searchbarFocus);
 
+    console.log(query);
+    
     function handleQueryChange(newInput) {
         setQuery(newInput);
     }
