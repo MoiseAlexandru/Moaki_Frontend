@@ -3,14 +3,24 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from "react-bootstrap/Button";
 import "../../css/feedPosts.css"
+import { useEffect, useState } from 'react';
+import getImageByPhotoName from '../../api/posts/getImageByPhotoName';
 
 export default function PostOverview({post}) {
+
+    const [imageSrc, setImageSrc] = useState(null);
+    
+    useEffect(function() {
+        setImageSrc(getImageByPhotoName(post.photoName));
+    }, [post])
+
+    console.log("image src: ", imageSrc);
     return (
         <div>
             <Container className = "postContainer">
             <Row>
                 <Col className = "picContainer">
-                <img src = {post.photopath} alt = {post.photopath} className="postPic"/>
+                <img src = {imageSrc} alt = {post.photopath} className="postPic"/>
            </Col>
                 <Col className = "postDetails">
                     <Row className = "postLocation" >📍{post.locationID}</Row>

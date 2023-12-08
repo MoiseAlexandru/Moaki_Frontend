@@ -10,7 +10,7 @@ export default function Searchbar({onSelect, onEnter, filterFunction = returnEmp
     const results = filterFunction(query);
     const [searchbarFocus, setSearchbarFocus] = useState(false);
 
-    console.log(query);
+    //console.log(query);
     
     function handleQueryChange(newInput) {
         setSearchbarFocus(true);
@@ -20,7 +20,8 @@ export default function Searchbar({onSelect, onEnter, filterFunction = returnEmp
     function handleKeyDown(event) {
         if(event.key === "Enter") {
             const selectedResult = onEnter(query);
-            setQuery(selectedResult);
+            if(selectedResult)
+                setQuery(selectedResult);
             setSearchbarFocus(false);
         }
     }

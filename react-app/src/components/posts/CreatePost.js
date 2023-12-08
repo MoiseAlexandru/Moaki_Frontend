@@ -7,6 +7,7 @@ import "../../css/createPost.css"
 import "../../css/imageselect.css"
 import Button from "react-bootstrap/Button";
 import { Link, useNavigate } from "react-router-dom";
+import createPost from "../../api/posts/createPost";
 
 export default function CreatePost() {
     const [locationName, setLocationName] = useState("");
@@ -17,7 +18,7 @@ export default function CreatePost() {
     const [username, setUsername] = useState("moise");
     const navigate = useNavigate();
 
-    console.log(locationName);
+    console.log(location);
 
     function handleLocationSelect(newLocation) {
         setLocationName(newLocation.name);
@@ -33,6 +34,35 @@ export default function CreatePost() {
         return results[0].name;
     }
 
+    function handleImageChange(image) {
+        setPhoto(image);
+    }
+
+    function handleScoreChange(event) {
+
+    }
+
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+      }
+
+    function handleSave() {
+        
+        createPost({
+            IDPost: getRandomInt(10000),
+            locationID: location.id,
+            username: "Wanderlust24",
+            description: description,
+            photoName: "",
+            score: score,
+            likes: 0,
+            comments: []
+        }, photo);
+
+        //navigate("/my-profile");
+    }
+
+
     return (
         <div>
 
@@ -42,12 +72,12 @@ export default function CreatePost() {
                 <h4>📍 Where is this place?</h4>
                 <Searchbar className = "locationSearchbar" onSelect = {handleLocationSelect} onEnter = {handleLocationEnter} filterFunction = {locationFilter} resultEntry={LocationResult} placeholderText = "Pick location..." forcedValue={locationName}/>
                 <h4>🖼️ Add an image!</h4>
-                <UploadAndDisplayImage className = "imageInput"/>
+                <UploadAndDisplayImage className = "imageInput" handleImageChange = {handleImageChange}/>
                 <h4>⭐ How much did you like it there?</h4>
-                <input type = "number" placeholder = "Score ( ? / 10 )" className = "scoreInput" />
+                <input type = "number" placeholder = "Score ( ? / 10 )" className = "scoreInput" onChange = {(e) => handleScoreChange(e)} />
                 <h4>💭 Write your thoughts here...</h4>
-                <textarea className = "descriptionTextarea"/>
-                <Button variant="postNowButton" onClick={() => {navigate("/my-profile")}}>Post Now!</Button>
+                <textarea className = "descriptionTextarea" onChange = {(e) => setDescription(e.target.value)} />
+                <Button variant="postNowButton" onClick={handleSave}>Post Now!</Button>
             </div>
         </div>
     );
