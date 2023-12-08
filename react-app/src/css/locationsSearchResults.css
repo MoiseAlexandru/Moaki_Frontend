@@ -14,6 +14,6 @@
     color: var(--text-color);
 }
 .btn-viewLocationButton:hover {
-    background-color: var(--button-hover-color);
+    background-color: var(--page-background);
     color: var(--text-color);
 }

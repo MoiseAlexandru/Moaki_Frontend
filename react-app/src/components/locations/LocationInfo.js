@@ -2,6 +2,6 @@
 
 export default function LocationInfo({locationId}) {
     return (
-        <div> Locatia cu id-ul {locationId} </div>
+        <h2> 📍 Location {locationId} </h2>
     )
 }

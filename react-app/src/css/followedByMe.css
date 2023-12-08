@@ -15,13 +15,14 @@
 
 .followingList {
     width: 100%;
-    border-left: 3px solid lightgray;
     max-height: 70%;
     overflow: auto;
+    align-items: center;
 
     margin: 0;
+    margin-left: 6rem;
     position: absolute;
-    top: 50%;
+    top: 40%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
 }
@@ -47,4 +48,18 @@
 
 .userSmallImg {
     max-height: 100%;
+}
+
+.btn-searchFriendsButton {
+    background-color: var(--page-background);
+    width: 100%;
+    height: 2.5rem;
+    margin-bottom: 2rem;
+    background-color: var(--button-color);
+    color: var(--text-color);
+}
+
+.btn-searchFriendsButton:hover {
+    background-color: var(--button-hover-color);
+    color: var(--text-color);
 }
