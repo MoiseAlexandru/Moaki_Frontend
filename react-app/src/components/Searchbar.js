@@ -5,21 +5,22 @@ function returnEmpty() {
     return []
 }
 
-export default function Searchbar({onSelect, onEnter, filterFunction = returnEmpty, resultEntry: ResultEntry, placeholderText = "Search here...", forcedValue = ""}) {
-    const [query, setQuery] = useState(forcedValue);
+export default function Searchbar({onSelect, onEnter, filterFunction = returnEmpty, resultEntry: ResultEntry, placeholderText = "Search here..."}) {
+    const [query, setQuery] = useState("");
     const results = filterFunction(query);
     const [searchbarFocus, setSearchbarFocus] = useState(false);
 
     console.log(query);
     
     function handleQueryChange(newInput) {
+        setSearchbarFocus(true);
         setQuery(newInput);
     }
 
     function handleKeyDown(event) {
         if(event.key === "Enter") {
-            onEnter(query);
-            setQuery(forcedValue);
+            const selectedResult = onEnter(query);
+            setQuery(selectedResult);
             setSearchbarFocus(false);
         }
     }

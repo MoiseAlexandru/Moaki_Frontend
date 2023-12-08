@@ -30,6 +30,7 @@ export default function CreatePost() {
             return;
         setLocation(results[0]);
         setLocationName(results[0].name);
+        return results[0].name;
     }
 
     return (
