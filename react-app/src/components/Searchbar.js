@@ -5,10 +5,11 @@ function returnEmpty() {
     return []
 }
 
-export default function Searchbar({onSelect, onEnter, filterFunction = returnEmpty, resultEntry: ResultEntry, placeholderText = "Search here..."}) {
+export default function Searchbar({onSelect, onEnter, filterFunction = returnEmpty, resultEntry: ResultEntry, placeholderText = "Search here...", forcedValue = ""}) {
     const [query, setQuery] = useState("");
     const results = filterFunction(query);
-    //console.log(filterFunction(query));
+    const [searchbarFocus, setSearchbarFocus] = useState(false);
+    console.log(searchbarFocus);
 
     function handleQueryChange(newInput) {
         setQuery(newInput);
@@ -17,6 +18,8 @@ export default function Searchbar({onSelect, onEnter, filterFunction = returnEmp
     function handleKeyDown(event) {
         if(event.key === "Enter") {
             onEnter(query);
+            setQuery(forcedValue);
+            setSearchbarFocus(false);
         }
     }
 
@@ -26,19 +29,20 @@ export default function Searchbar({onSelect, onEnter, filterFunction = returnEmp
         else
             setQuery(result.name);
         onSelect(result);
+        setSearchbarFocus(false);
     }
 
     return (
         <div className = "containerSearchAndResults">
-            <input className = "searchbar" type = "text" value = {query} placeholder = {placeholderText} onChange = {(e) => handleQueryChange(e.target.value)} onKeyDown={handleKeyDown}/>
+            <input className = "searchbar" type = "text" value = {query} placeholder = {placeholderText} onChange = {(e) => handleQueryChange(e.target.value)} onClick = {() => {setSearchbarFocus(true)}} onKeyDown={handleKeyDown}/>
             
-            <div className="resultsBox">
+            {searchbarFocus && <div className="resultsBox">
                 {results.map(result => (
                     <li key = {result[Object.keys(result)[0]]} onClick = {() => {handleResultSelect(result)}}>
                         <ResultEntry result = {result}  />
                     </li>
                 ))}
-            </div>
+            </div>}
         </div>
     );
 }
