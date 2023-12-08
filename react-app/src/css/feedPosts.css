@@ -37,6 +37,7 @@
 }
 .postScore {
     padding: 1rem;
+    margin-left: 1rem;
 }
 
 .postLikes {
@@ -59,6 +60,18 @@
 }
 
 .btn-viewPostButton:hover {
+    background-color: var(--button-hover-color);
+    color: var(--text-color);
+}
+
+.btn-likePostButton{
+    width: 10rem;
+    background-color: var(--button-color);
+    color: var(--text-color);
+    padding: 1rem;
+}
+
+.btn-likePostButton:hover {
     background-color: var(--button-hover-color);
     color: var(--text-color);
 }

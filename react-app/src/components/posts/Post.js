@@ -20,7 +20,7 @@ export default function Post({post}) {
             </Row>
             <Row className = "postAnalytics">
                 <Col className = "postScore">⭐ {post.score} Stars</Col>
-                <Col className = "postLikes">❤️ {post.likes} Likes</Col>
+                <Col><Button variant="likePostButton">❤️ {post.likes} Likes</Button></Col>
                 <Col><Button variant="viewPostButton">💬 {post.comments.length} Comments</Button></Col>
             </Row>
             </Container>
