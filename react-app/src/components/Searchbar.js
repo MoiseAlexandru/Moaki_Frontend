@@ -5,7 +5,7 @@ function returnEmpty() {
     return []
 }
 
-export default function Searchbar({onSelect, onEnter, filterFunction = returnEmpty, resultEntry: ResultEntry}) {
+export default function Searchbar({onSelect, onEnter, filterFunction = returnEmpty, resultEntry: ResultEntry, placeholderText = "Search here..."}) {
     const [query, setQuery] = useState("");
     const results = filterFunction(query);
     //console.log(filterFunction(query));
@@ -21,13 +21,16 @@ export default function Searchbar({onSelect, onEnter, filterFunction = returnEmp
     }
 
     function handleResultSelect(result) {
-        setQuery(result)
+        if(result.username)
+            setQuery(result.username);
+        else
+            setQuery(result.name);
         onSelect(result);
     }
 
     return (
         <div className = "containerSearchAndResults">
-            <input className = "searchbar" type = "text" value = {query} placeholder = "Search here... " onChange = {(e) => handleQueryChange(e.target.value)} onKeyDown={handleKeyDown}/>
+            <input className = "searchbar" type = "text" value = {query} placeholder = {placeholderText} onChange = {(e) => handleQueryChange(e.target.value)} onKeyDown={handleKeyDown}/>
             
             <div className="resultsBox">
                 {results.map(result => (
