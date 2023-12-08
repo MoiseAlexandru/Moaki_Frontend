@@ -12,12 +12,13 @@ export default function LocationSearchPage() {
 
     function handleLocationSelect(selectedLocation) {
         const newLocation = selectedLocation.id;
-        console.log(newLocation);
-        navigate(`/location/${newLocation}`);
+        //console.log(newLocation);
+        //navigate(`/location/${newLocation}`);
         // <LocationSearchResults query = {newLocation} />
     }
 
     function handleLocationEnter(input) {
+        
         const newDisplayedLocations = locationFilter(input);
         console.log(newDisplayedLocations);
         setDisplayedLocations(newDisplayedLocations);

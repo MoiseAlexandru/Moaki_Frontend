@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Button from "react-bootstrap/Button";
 import "../../css/feedPosts.css"
 
-export default function Post({post}) {
+export default function PostOverview({post}) {
     return (
         <div>
             <Container className = "postContainer">
