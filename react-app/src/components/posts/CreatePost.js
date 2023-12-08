@@ -39,7 +39,7 @@ export default function CreatePost() {
             <p>🗿 Discovered an amazing new place? Share it with the group! 🗿</p>
             <div className = "createPostContainer">
                 <h4>📍 Where is this place?</h4>
-                <Searchbar className = "locationSearchbar" onSelect = {handleLocationSelect} onEnter = {handleLocationEnter} filterFunction = {locationFilter} resultEntry={LocationResult} placeholderText = "Pick location..." />
+                <Searchbar className = "locationSearchbar" onSelect = {handleLocationSelect} onEnter = {handleLocationEnter} filterFunction = {locationFilter} resultEntry={LocationResult} placeholderText = "Pick location..." forcedValue={locationName}/>
                 <h4>🖼️ Add an image!</h4>
                 <UploadAndDisplayImage className = "imageInput"/>
                 <h4>⭐ How much did you like it there?</h4>
