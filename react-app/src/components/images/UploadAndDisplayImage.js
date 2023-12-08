@@ -9,7 +9,6 @@ export default function UploadAndDisplayImage() {
 
     return (
         <div> 
-            <p> Select image </p>
             {image && <img className = "imageSelect" src = {URL.createObjectURL(image)} /> }
             <input type = "file" name = "myImage" onChange = {(e) => handleImageChange(e)}></input>
         </div>
