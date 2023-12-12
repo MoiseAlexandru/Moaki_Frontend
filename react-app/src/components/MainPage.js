@@ -9,6 +9,7 @@ import LocationPage from "./posts/PostPage";
 import PostPage from "./locations/LocationPage";
 import CreatePost from "./posts/CreatePost";
 import CreateComment from "./comments/CreateComment";
+import MorePostsList from "./posts/MorePostsList";
 
 function LocationPageRouting() {
     const {id} = useParams();
@@ -41,6 +42,7 @@ export default function MainPage() {
                     <Route exact path = "/location/:id" element = {<LocationPageRouting />} />
                     <Route exact path = "/create-post" element = {<CreatePost />} />
                     <Route exact path = "/create-comment/:id" element = {<PostPageRouting />} />
+                    <Route exact path = "/more-posts" element = {<MorePostsList /> } />
                 </Routes>
             </div>
         </HashRouter>

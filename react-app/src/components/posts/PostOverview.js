@@ -16,7 +16,6 @@ export default function PostOverview({post}) {
         setImageSrc(getImageByPhotoName(post.photoName));
     }, [post])
 
-    console.log("image src: ", imageSrc);
     return (
         <div>
             <Container className = "postContainer">
