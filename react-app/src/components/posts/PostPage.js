@@ -2,20 +2,28 @@ import { useEffect, useState } from "react";
 import PostOverview from "./PostOverview";
 import CreateComment from "../comments/CreateComment";
 import fetchPostById from "../../api/posts/fetchPostById";
+import CommentList from "../comments/CommentList";
 
 
 export default function PostPage({postId}) {
     const [commList, setCommList] = useState([]);
+    const [post, setPost] = useState(null);
 
     useEffect(function() {
-        setCommList(fetchPostById(postId));
+        setPost(fetchPostById(postId));
     }, [postId])
+
+    console.log("Post from post page", post)
 
     return (
         <>
-            <PostOverview post = {fetchPostById(postId)} />
-            {/* <PostList postList = {postList} /> */}
-            <CreateComment/>
+            {post &&
+            <>
+                <PostOverview post = {post} />
+                <CommentList comments = {post} />
+                <CreateComment/>
+            </>
+            }
         </>
     );
 }

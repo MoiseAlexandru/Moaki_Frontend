@@ -9,8 +9,8 @@ export default function LocationPage({locationId}) {
 
     useEffect(function() {
         setPostList(fetchPostsByLocationId(locationId));
-    }, [locationId])
-
+    }, [locationId]);
+    
     return (
         <>
             <LocationInfo locationId = {locationId} />

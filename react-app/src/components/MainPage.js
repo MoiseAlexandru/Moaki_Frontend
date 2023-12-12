@@ -5,16 +5,19 @@ import "../css/mainPage.css";
 import {HashRouter, Route, Routes, useParams} from "react-router-dom";
 import LocationSearchPage from "./locations/LocationSearchPage";
 import UserPage from "./users/UserSearchPage";
-import LocationPage from "./posts/PostPage";
-import PostPage from "./locations/LocationPage";
+import PostPage from "./posts/PostPage";
+import LocationPage from "./locations/LocationPage";
 import CreatePost from "./posts/CreatePost";
 import CreateComment from "./comments/CreateComment";
 
 function LocationPageRouting() {
     const {id} = useParams();
     return (
+        <div>
+        {console.log("intra in return")}
         <LocationPage locationId = {Number(id)} />
-    )
+        </div>
+    );
 }
 
 function PostPageRouting() {

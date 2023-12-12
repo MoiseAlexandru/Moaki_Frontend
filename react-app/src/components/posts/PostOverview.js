@@ -17,6 +17,7 @@ export default function PostOverview({post}) {
     }, [post])
 
     console.log("image src: ", imageSrc);
+    
     return (
         <div>
             <Container className = "postContainer">
@@ -33,6 +34,7 @@ export default function PostOverview({post}) {
             <Row className = "postAnalytics">
                 <Col className = "postScore">⭐ {post.score} Stars</Col>
                 <Col><Button variant="likePostButton">❤️ {post.likes} Likes</Button></Col>
+                {console.log("post: ", post)}
                 <Col><Button variant="viewPostButton"  onClick={() => {navigate(`/create-comment/${post.IDPost}`)}}>💬 {post.comments.length} Comments</Button></Col>
             </Row>
             </Container>
