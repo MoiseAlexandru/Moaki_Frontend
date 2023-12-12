@@ -5,7 +5,6 @@ export default function createPost(postDetails, photo) {
 
     const photoName = "photo-post-" + postDetails.IDPost;
     
-    console.log("INTARAAAAa", photoName, photo);
     const reader = new FileReader();
         reader.addEventListener('load', () => {
             localStorage.setItem(photoName, reader.result);
