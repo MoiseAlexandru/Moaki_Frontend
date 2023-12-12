@@ -19,7 +19,7 @@ export default function MorePostsList() {
         <div>
             {console.log(posts)}
             {isLoading ? <div> Posts loading... </div>
-            : posts.map((post) => <PostOverview post = {post} />) 
+            : posts.map((post) => <PostOverview post = {post} key = {post.id} />) 
             }
 
         </div>

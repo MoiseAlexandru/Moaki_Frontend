@@ -33,7 +33,7 @@ export default function PostOverview({post}) {
                 <Col className = "postScore">⭐ {post.score} Stars</Col>
                 <Col><Button variant="likePostButton">❤️ {post.likes} Likes</Button></Col>
                 {console.log("post: ", post)}
-                <Col><Button variant="viewPostButton"  onClick={() => {navigate(`/create-comment/${post.IDPost}`)}}>💬 {post.comments.length} Comments</Button></Col>
+                <Col><Button variant="viewPostButton"  onClick={() => {navigate(`/create-comment/${post.IDPost}`)}}>💬 {post.commentIds.length} Comments</Button></Col>
             </Row>
             </Container>
         </div>
