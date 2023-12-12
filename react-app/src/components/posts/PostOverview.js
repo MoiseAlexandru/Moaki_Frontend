@@ -5,10 +5,12 @@ import Button from "react-bootstrap/Button";
 import "../../css/feedPosts.css"
 import { useEffect, useState } from 'react';
 import getImageByPhotoName from '../../api/posts/getImageByPhotoName';
+import { Link, useNavigate } from "react-router-dom";
 
 export default function PostOverview({post}) {
 
     const [imageSrc, setImageSrc] = useState(null);
+    const navigate = useNavigate();
     
     useEffect(function() {
         setImageSrc(getImageByPhotoName(post.photoName));
@@ -31,7 +33,7 @@ export default function PostOverview({post}) {
             <Row className = "postAnalytics">
                 <Col className = "postScore">⭐ {post.score} Stars</Col>
                 <Col><Button variant="likePostButton">❤️ {post.likes} Likes</Button></Col>
-                <Col><Button variant="viewPostButton">💬 {post.comments.length} Comments</Button></Col>
+                <Col><Button variant="viewPostButton"  onClick={() => {navigate(`/create-comment/${post.IDPost}`)}}>💬 {post.comments.length} Comments</Button></Col>
             </Row>
             </Container>
         </div>

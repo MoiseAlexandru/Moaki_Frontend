@@ -157,7 +157,7 @@ export const postList = [
       "photopath": "postsPics/photopath1.webp",
       "score": 4.2,
       "likes": 15,
-      "comments": []
+      "comments": [2, 3]
     },
     {
       "IDPost": 2,
@@ -167,7 +167,7 @@ export const postList = [
       "photopath": "postsPics/photopath2.webp",
       "score": 3.8,
       "likes": 20,
-      "comments": []
+      "comments": [1, 4, 6]
     },
     {
       "IDPost": 3,
@@ -177,7 +177,7 @@ export const postList = [
       "photopath": "postsPics/photopath3.webp",
       "score": 5.0,
       "likes": 12,
-      "comments": []
+      "comments": [7, 8]
     },
     {
       "IDPost": 4,
@@ -187,7 +187,7 @@ export const postList = [
       "photopath": "postsPics/photopath4.jpeg",
       "score": 4.5,
       "likes": 18,
-      "comments": []
+      "comments": [9]
     },
     {
       "IDPost": 5,
@@ -197,7 +197,7 @@ export const postList = [
       "photopath": "postsPics/photopath5.jpeg",
       "score": 3.2,
       "likes": 10,
-      "comments": []
+      "comments": [10]
     },
     {
       "IDPost": 6,
@@ -238,5 +238,58 @@ export const postList = [
       "score": 4.5,
       "likes": 22,
       "comments": []
+    }
+  ]
+
+  export const commList = [
+    {
+      "IDComm" : 1,
+      "username" : "HistoryBuff",
+      "content" : "Wow!"
+    },
+    {
+      "IDComm" : 2,
+      "username" : "SunsetChaser",
+      "content" : "Wow!"
+    },
+    {
+      "IDComm" : 3,
+      "username" : "UrbanExplorer",
+      "content" : "Wow!"
+    },
+    {
+      "IDComm" : 4,
+      "username" : "EpicureanNomad",
+      "content" : "Wow!"
+    },
+    {
+      "IDComm" : 5,
+      "username" : "UrbanExplorer",
+      "content" : "Wow!"
+    },
+    {
+      "IDComm" : 6,
+      "username" : "HistoryBuff",
+      "content" : "Wow!"
+    },
+    {
+      "IDComm" : 7,
+      "username" : "SunsetChaser",
+      "content" : "Wow!"
+    },
+    {
+      "IDComm" : 8,
+      "username" : "HistoryBuff",
+      "content" : "Wow!"
+    },
+    {
+      "IDComm" : 9,
+      "username" : "FoodieFanatic",
+      "content" : "Wow!"
+    },
+    {
+      "IDComm" : 10,
+      "username" : "FoodieFanatic",
+      "content" : "Wow!"
     }
   ]

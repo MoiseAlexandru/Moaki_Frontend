@@ -5,13 +5,22 @@ import "../css/mainPage.css";
 import {HashRouter, Route, Routes, useParams} from "react-router-dom";
 import LocationSearchPage from "./locations/LocationSearchPage";
 import UserPage from "./users/UserSearchPage";
-import LocationPage from "./locations/LocationPage";
+import LocationPage from "./posts/PostPage";
+import PostPage from "./locations/LocationPage";
 import CreatePost from "./posts/CreatePost";
+import CreateComment from "./comments/CreateComment";
 
 function LocationPageRouting() {
     const {id} = useParams();
     return (
         <LocationPage locationId = {Number(id)} />
+    )
+}
+
+function PostPageRouting() {
+    const {id} = useParams();
+    return (
+        <PostPage postId = {Number(id)} />
     )
 }
 
@@ -31,6 +40,7 @@ export default function MainPage() {
                     <Route exact path = "/users" element = {<UserPage />} />
                     <Route exact path = "/location/:id" element = {<LocationPageRouting />} />
                     <Route exact path = "/create-post" element = {<CreatePost />} />
+                    <Route exact path = "/create-comment/:id" element = {<PostPageRouting />} />
                 </Routes>
             </div>
         </HashRouter>
