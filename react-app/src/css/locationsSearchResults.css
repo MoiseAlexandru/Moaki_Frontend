@@ -17,3 +17,21 @@
     background-color: var(--page-background);
     color: var(--text-color);
 }
+
+.centerButton {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.btn-addLocationButton {
+    margin: auto;
+    width: 10rem;
+    background-color: var(--button-color);
+    color: var(--text-color);
+}
+
+.btn-addLocationButton:hover {
+    background-color: var(--button-color);
+    color: var(--text-color);
+}

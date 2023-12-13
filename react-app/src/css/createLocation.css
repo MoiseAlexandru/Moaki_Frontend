@@ -1,0 +1,27 @@
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid green;
+}
+
+.address, .geoLocation {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+}
+
+
+.row-name {
+    width: 100%;
+}
+
+.address div, .geoLocation div {
+    width: 50%;
+}
+
+.row-name, .address div, .geoLocation div {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}

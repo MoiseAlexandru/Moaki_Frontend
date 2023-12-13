@@ -4,6 +4,7 @@ import Searchbar from "../Searchbar";
 import locationFilter from "../../api/location/locationFilter";
 import LocationSearchResult from "./LocationSearchResult";
 import LocationResult from "./LocationResult";
+import Button from "react-bootstrap/esm/Button";
 
 export default function LocationSearchPage() {
     
@@ -26,11 +27,15 @@ export default function LocationSearchPage() {
 
     return (
         <>
-        <h2> Discover Locations... </h2>
-        <p>🗿 Discover new travel destionation today! 🗿</p>
+            <h2> Discover Locations... </h2>
+            <p>🗿 Discover new travel destionation today! 🗿</p>
             <Searchbar onSelect = {handleLocationSelect} onEnter = {handleLocationEnter} filterFunction = {locationFilter} resultEntry={LocationResult}/>
+            {displayedLocations && displayedLocations.map((location) => <LocationSearchResult location = {location} key = {location.name} />)}
             
-            {displayedLocations.map((location) => <LocationSearchResult location = {location} key = {location.name} />)}
+            <div className = "centerButton">
+                <Button variant = "addLocationButton" onClick = {() => {navigate("/location/create")}}> Add a new location </Button>
+            </div>
+
         </>
     );
 }
