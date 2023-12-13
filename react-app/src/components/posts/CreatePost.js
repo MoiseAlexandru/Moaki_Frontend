@@ -18,8 +18,6 @@ export default function CreatePost() {
     const [username, setUsername] = useState("moise");
     const navigate = useNavigate();
 
-    console.log(location);
-
     function handleLocationSelect(newLocation) {
         setLocationName(newLocation.name);
         setLocation(newLocation);

@@ -1,9 +1,10 @@
 import CommentOverview from "./CommentOverview";
 
 export default function CommentList({post}) {
+
     return (
         <div>
-            {post.comments.map((comment) => {<CommentOverview />})}
+            {post.comments.map((comment) => {<CommentOverview comment={comment}/>})}
         </div>
     );
 }

@@ -8,7 +8,6 @@ import UserPage from "./users/UserSearchPage";
 import PostPage from "./posts/PostPage";
 import LocationPage from "./locations/LocationPage";
 import CreatePost from "./posts/CreatePost";
-import CreateComment from "./comments/CreateComment";
 import MorePostsList from "./posts/MorePostsList";
 import CreateLocationPage from "./locations/CreateLocationPage";
 
@@ -16,8 +15,7 @@ function LocationPageRouting() {
     const {id} = useParams();
     return (
         <div>
-        {console.log("intra in return")}
-        <LocationPage locationId = {Number(id)} />
+            <LocationPage locationId = {Number(id)} />
         </div>
     );
 }
@@ -46,7 +44,7 @@ export default function MainPage() {
                     <Route exact path = "/location/:id" element = {<LocationPageRouting />} />
                     <Route exact path = "/location/create" element = {<CreateLocationPage />} />
                     <Route exact path = "/create-post" element = {<CreatePost />} />
-                    <Route exact path = "/create-comment/:id" element = {<PostPageRouting />} />
+                    <Route exact path = "/post/:id" element = {<PostPageRouting />} />
                     <Route exact path = "/more-posts" element = {<MorePostsList /> } />
                 </Routes>
             </div>

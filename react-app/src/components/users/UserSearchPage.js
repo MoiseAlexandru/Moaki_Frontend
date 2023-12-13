@@ -15,7 +15,6 @@ export default function UserPage() {
     const numUsers = users.length;
     const [query, setQuery] = useState("");
     const navigate = useNavigate();
-    console.log(query);
 
     function handleSearchChange(newText) {
         setQuery(newText);

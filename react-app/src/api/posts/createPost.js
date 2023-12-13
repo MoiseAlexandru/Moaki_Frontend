@@ -14,6 +14,4 @@ export default function createPost(postDetails, photo) {
     
     const post = {...postDetails, photoName: photoName};
     postList.push(post);
-    console.log(post);
-    console.log(postList);
 }

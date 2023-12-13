@@ -13,14 +13,12 @@ export default function PostPage({postId}) {
         setPost(fetchPostById(postId));
     }, [postId])
 
-    console.log("Post from post page", post)
-
     return (
         <>
             {post &&
             <>
                 <PostOverview post = {post} />
-                <CommentList comments = {post} />
+                <CommentList post = {post} />
                 <CreateComment/>
             </>
             }
