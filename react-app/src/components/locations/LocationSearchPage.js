@@ -18,10 +18,10 @@ export default function LocationSearchPage() {
         // <LocationSearchResults query = {newLocation} />
     }
 
-    function handleLocationEnter(input) {
-        
-        const newDisplayedLocations = locationFilter(input);
-        //console.log(newDisplayedLocations);
+    async function handleLocationEnter(input, controller) {
+        console.log("input: ", input);
+        const newDisplayedLocations = await locationFilter(input, controller);
+        console.log(newDisplayedLocations);
         setDisplayedLocations(newDisplayedLocations);
     }
 

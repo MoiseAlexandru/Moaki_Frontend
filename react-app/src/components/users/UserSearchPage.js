@@ -25,8 +25,8 @@ export default function UserPage() {
         navigate(`/user/${user.username}`)
     }
 
-    function handleUserEnter(input) {
-        const newUserList = userFilter(input);
+    async function handleUserEnter(input, controller) {
+        const newUserList = await userFilter(input, controller);
         setUsers(newUserList);
     }
 

@@ -61,10 +61,12 @@ export const usersData = [
       photoname: "profilePics/PetLoverXOXO.jpeg"
     }];
 
-    export default function userFilter(query) {
-        if(!query)
-            return [];
+export default async function userFilter(query, controller) {
+    if(!query)
+        return [];
     
-        const filterResults = usersData.filter((user) => user.username.toLowerCase().includes(query.toLowerCase()));
-        return filterResults;
-    }
+    const filterResults = usersData.filter((user) => user.username.toLowerCase().includes(query.toLowerCase()));
+    return filterResults;
+    
+    
+  }
