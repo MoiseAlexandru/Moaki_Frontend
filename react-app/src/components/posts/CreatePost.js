@@ -23,8 +23,8 @@ export default function CreatePost() {
         setLocation(newLocation);
     }
 
-    function handleLocationEnter(input) {
-        const results = locationFilter(input);
+    async function handleLocationEnter(input) {
+        const results = await locationFilter(input);
         if(results.length === 0)
             return;
         setLocation(results[0]);
@@ -44,20 +44,19 @@ export default function CreatePost() {
         return Math.floor(Math.random() * max);
       }
 
-    function handleSave() {
+    async function handleSave() {
         
-        createPost({
+        await createPost({
             IDPost: getRandomInt(10000),
             locationID: location.id,
             username: "Wanderlust24",
             description: description,
-            photoName: "",
             score: score,
             likes: 0,
             comments: []
         }, photo);
 
-        //navigate("/my-profile");
+        navigate("/my-feed");
     }
 
 

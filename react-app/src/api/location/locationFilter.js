@@ -17,7 +17,7 @@ export default async function locationFilter(query, controller) {
             headers: {
                 'Content-Type': 'application/json'
             },
-            signal: controller.signal
+            signal: controller ? controller.signal : null
         });
         const data = await response.json();
         return data;

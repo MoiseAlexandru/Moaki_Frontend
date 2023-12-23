@@ -11,7 +11,7 @@ export default function PostOverview({post}) {
 
     const [imageSrc, setImageSrc] = useState(null);
     const navigate = useNavigate();
-    
+
     useEffect(function() {
         setImageSrc(getImageByPhotoName(post.photoName));
     }, [post])
