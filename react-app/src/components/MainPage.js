@@ -5,25 +5,15 @@ import "../css/mainPage.css";
 import {HashRouter, Route, Routes, useParams} from "react-router-dom";
 import LocationSearchPage from "./locations/LocationSearchPage";
 import UserPage from "./users/UserSearchPage";
-import PostPage from "./posts/PostPage";
 import LocationPage from "./locations/LocationPage";
 import CreatePost from "./posts/CreatePost";
-import MorePostsList from "./posts/MorePostsList";
 import CreateLocationPage from "./locations/CreateLocationPage";
 
 function LocationPageRouting() {
     const {id} = useParams();
+    console.log(id);
     return (
-        <div>
-            <LocationPage locationId = {Number(id)} />
-        </div>
-    );
-}
-
-function PostPageRouting() {
-    const {id} = useParams();
-    return (
-        <PostPage postId = {Number(id)} />
+        <LocationPage locationId = {id} />
     )
 }
 
@@ -41,11 +31,9 @@ export default function MainPage() {
                 <Routes>
                     <Route exact path = "/search-location" element = {<LocationSearchPage />} />
                     <Route exact path = "/users" element = {<UserPage />} />
+                    <Route exact path = "/location/create" element = {<CreateLocationPage /> } />
                     <Route exact path = "/location/:id" element = {<LocationPageRouting />} />
-                    <Route exact path = "/location/create" element = {<CreateLocationPage />} />
                     <Route exact path = "/create-post" element = {<CreatePost />} />
-                    <Route exact path = "/post/:id" element = {<PostPageRouting />} />
-                    <Route exact path = "/more-posts" element = {<MorePostsList /> } />
                 </Routes>
             </div>
         </HashRouter>

@@ -7,7 +7,7 @@ export default async function createPost(postDetails, image) {
     const imageString = await imageToBase64(image);
 
     const post = {...postDetails, image: imageString};
-    console.log(post);
+    console.log(JSON.stringify(post));
     
     try {
         const response = await fetch(`http://localhost:8080/post/add`, {

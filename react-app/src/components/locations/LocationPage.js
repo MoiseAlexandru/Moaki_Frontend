@@ -8,9 +8,13 @@ export default function LocationPage({locationId}) {
     const [postList, setPostList] = useState([]);
 
     useEffect(function() {
-        setPostList(fetchPostsByLocationId(locationId));
+        async function fetchByLocation() {
+            setPostList(await fetchPostsByLocationId(locationId));
+        }
+        fetchByLocation();
     }, [locationId]);
     
+    console.log("post list:", postList);
     return (
         <>
             <LocationInfo locationId = {locationId} />

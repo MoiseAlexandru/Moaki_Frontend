@@ -47,13 +47,13 @@ export default function CreatePost() {
     async function handleSave() {
         
         await createPost({
-            IDPost: getRandomInt(10000),
-            locationID: location.id,
+            id: getRandomInt(10000),
+            locationId: location.id,
             username: "Wanderlust24",
             description: description,
             score: score,
             likes: 0,
-            comments: []
+            commentIds: []
         }, photo);
 
         navigate("/my-feed");
