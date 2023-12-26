@@ -37,7 +37,7 @@ export default function CreatePost() {
     }
 
     function handleScoreChange(event) {
-
+        setScore(event.target.value);
     }
 
     function getRandomInt(max) {
@@ -49,7 +49,7 @@ export default function CreatePost() {
         await createPost({
             id: getRandomInt(10000),
             locationId: location.id,
-            username: "Wanderlust24",
+            username: username,
             description: description,
             score: score,
             likes: 0,

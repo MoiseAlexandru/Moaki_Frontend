@@ -3,25 +3,46 @@ import PostOverview from "./PostOverview";
 import CreateComment from "../comments/CreateComment";
 import fetchPostById from "../../api/posts/fetchPostById";
 import CommentList from "../comments/CommentList";
+import fetchCommentById from "../../api/comments/fetchCommentById";
 
 
 export default function PostPage({postId}) {
-    const [commList, setCommList] = useState([]);
+
     const [post, setPost] = useState(null);
+    const [commentList, setCommentList] = useState([]);
 
     useEffect(function() {
-        setPost(fetchPostById(postId));
+        async function getPostData() {
+            setPost(await fetchPostById(postId));
+        }
+        getPostData();
     }, [postId])
+
+    useEffect(function() {
+        async function getComments() {
+            if(!post)
+                return;
+            const commList = [];
+            for(let commId of post.commentIds) {
+                const comment = await fetchCommentById(commId);
+                if(comment)
+                    commList.push(comment);
+            }
+            setCommentList(commList);
+        }
+        getComments();
+    }, [post])
+
+    if(!post)
+        return <div> Loading ... </div>
 
     return (
         <>
-            {post &&
             <>
-                <PostOverview post = {post} />
-                <CommentList post = {post} />
-                <CreateComment/>
+                <PostOverview post = {post} isExpanded = {true}/>
+                <CommentList commentList = {commentList} />
+                <CreateComment post = {post} />
             </>
-            }
         </>
     );
 }

@@ -9,10 +9,11 @@ import { Link, useNavigate } from "react-router-dom";
 import fetchLocationById from '../../api/location/fetchLocationById';
 import { useEffect, useState } from 'react';
 
-export default function PostOverview({post}) {
+export default function PostOverview({post, isExpanded}) {
 
     //const [imageSrc, setImageSrc] = useState(null);
     const [location, setLocation] = useState(null);
+    const [liked, setLiked] = useState(false);
     const navigate = useNavigate();
 
     
@@ -23,6 +24,14 @@ export default function PostOverview({post}) {
         fetchLocationData();
     }, [post.locationId])
     
+    /*
+    useEffect(function() {
+        async function getLikedStatus() {
+            setLiked(await fetchLikedStatus(post.id))
+        }
+        
+    })
+    */
 
     return (
         <div>

@@ -7,7 +7,8 @@ import { Link, useNavigate } from "react-router-dom";
 import fetchCommentById from '../../api/comments/fetchCommentById';
 
 export default function CommentOverview({comment}) {
-    let commObj = fetchCommentById(comment);
+    
+    let commObj = comment;
     return (
         <div>
             <Container className = "commContainer">

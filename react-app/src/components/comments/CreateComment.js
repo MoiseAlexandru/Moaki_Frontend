@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import { Link, useNavigate } from "react-router-dom";
 import createComment from "../../api/comments/createComment";
 
-export default function CreateComment() {
+export default function CreateComment({post}) {
     const [content, setContent] = useState("");
     const [username, setUsername] = useState("moise");
     const navigate = useNavigate();
@@ -15,12 +15,12 @@ export default function CreateComment() {
     function handleSave() {
         
         createComment({
-            IDComm: getRandomInt(10000),
-            username: "Wanderlust24",
+            id: getRandomInt(10000),
+            username: username,
             content: content,
-        });
+        }, post);
 
-        //navigate("/my-profile");
+        window.location.reload(false);
     }
 
     return (
