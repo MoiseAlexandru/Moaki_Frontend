@@ -1,0 +1,29 @@
+
+.commContainer {
+    width: 100%;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+.user {
+    font-weight: bold;
+    width: 70%;
+}
+
+.buttons {
+    width: 30%;
+}
+
+
+.readonlyTextarea:focus {
+    border-color: inherit;
+    box-shadow: none;
+    outline: none;
+    border: none;
+}
+
+.readonlyTextarea {
+    pointer-events:auto;
+    outline: none;
+    border: none;
+}

@@ -1,10 +1,10 @@
 import CommentOverview from "./CommentOverview";
 
-export default function CommentList({commentList}) {
+export default function CommentList({post, commentList}) {
     
     return (
         <div>
-            {commentList.map((comment) => <CommentOverview comment={comment} key = {comment.id} />)}
+            {commentList.map((comment) => <CommentOverview post = {post} comment={comment} key = {comment.id} />)}
         </div>
     );
 }

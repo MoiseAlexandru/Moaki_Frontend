@@ -40,7 +40,7 @@ export default function PostPage({postId}) {
         <>
             <>
                 <PostOverview post = {post} isExpanded = {true}/>
-                <CommentList commentList = {commentList} />
+                <CommentList post = {post} commentList = {commentList} />
                 <CreateComment post = {post} />
             </>
         </>

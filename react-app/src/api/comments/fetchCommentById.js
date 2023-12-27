@@ -2,6 +2,7 @@ import { commList } from "../../dummydata";
 
 export default async function fetchCommentById(commId) {
 
+    console.log("se cere commentul", commId);
     try {
         const response = await fetch(`http://localhost:8080/comment/get/${commId}`, {
             method: 'GET',

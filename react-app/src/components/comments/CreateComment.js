@@ -2,6 +2,7 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import { Link, useNavigate } from "react-router-dom";
 import createComment from "../../api/comments/createComment";
+import deleteAllCommentsByPost from "../../api/comments/deleteAllCommentsByPost";
 
 export default function CreateComment({post}) {
     const [content, setContent] = useState("");
@@ -12,15 +13,19 @@ export default function CreateComment({post}) {
         return Math.floor(Math.random() * max);
       }
 
-    function handleSave() {
+    async function handleSave() {
         
-        createComment({
+        await createComment({
             id: getRandomInt(10000),
             username: username,
             content: content,
         }, post);
 
         window.location.reload(false);
+    }
+
+    async function handleDeleteAll() {
+        await deleteAllCommentsByPost(post);
     }
 
     return (
@@ -31,6 +36,10 @@ export default function CreateComment({post}) {
                 <h4>💭 Comment here...</h4>
                 <textarea className = "commTextarea" onChange = {(e) => setContent(e.target.value)} />
                 <Button variant="commNowButton" onClick={handleSave}>Comment Now!</Button>
+            </div>
+            <div>
+                Strict pt debug!
+                <Button variant = "danger" onClick = {() => handleDeleteAll()} > Sterge toate commenturile </Button>
             </div>
         </div>
     );
