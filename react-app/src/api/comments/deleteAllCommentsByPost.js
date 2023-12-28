@@ -3,7 +3,7 @@ import deleteComment from "./deleteComment";
 import deleteOnlyComment from "./deleteOnlyComment";
 
 
-export default async function deleteAllCommentsByPost(post) {
+export default async function deleteAllCommentsByPost(post, willReload = false) {
 
     const commentList = post.commentIds;
 
@@ -12,5 +12,6 @@ export default async function deleteAllCommentsByPost(post) {
     }
     await editPost(post.id, {...post, commentIds: []});
     
-    window.location.reload(false);
+    if(willReload === true)
+        window.location.reload(false);
 }

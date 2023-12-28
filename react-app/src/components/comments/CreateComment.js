@@ -21,7 +21,7 @@ export default function CreateComment({post}) {
             content: content,
         }, post);
 
-        window.location.reload(false);
+        window.location.reload(false, true);
     }
 
     async function handleDeleteAll() {

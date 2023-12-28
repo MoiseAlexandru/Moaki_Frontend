@@ -8,11 +8,16 @@ import "../../css/feedPosts.css"
 import { Link, useNavigate } from "react-router-dom";
 import fetchLocationById from '../../api/location/fetchLocationById';
 import { useEffect, useState } from 'react';
+import Form from 'react-bootstrap/Form';
+import editPost from '../../api/posts/editPost';
+import deletePost from '../../api/posts/deletePost';
 
 export default function PostOverview({post, isExpanded}) {
 
     //const [imageSrc, setImageSrc] = useState(null);
     const [location, setLocation] = useState(null);
+    const [description, setDescription] = useState(post.description);
+    const [isEditing, setIsEditing] = useState(false);
     const [liked, setLiked] = useState(false);
     const navigate = useNavigate();
 
@@ -33,6 +38,23 @@ export default function PostOverview({post, isExpanded}) {
     })
     */
 
+    async function handleDelete() {
+        console.log("deleting post with id", post.id);
+        await deletePost(post);
+        navigate(`/location/${post.locationId}`);
+    }
+
+    async function handleSave() {
+        await editPost(post.id, {...post, description: description});
+        setIsEditing(false);
+        window.location.reload(false);
+    }
+
+    async function handleCancel() {
+        setDescription(post.description);
+        setIsEditing(false);
+    }
+
     return (
         <div>
             <Container className = "postContainer">
@@ -41,9 +63,41 @@ export default function PostOverview({post, isExpanded}) {
                 <img src = {post.image} alt = {post.photopath} className="postPic"/>
            </Col>
                 <Col className = "postDetails">
-                    {location && <Row className = "postLocation" >📍{location.name} </Row>}
-                    <Row className = "postCreator">👤 {post.username}</Row>
-                    <Row className = "postDescription">📙 {post.description}</Row>
+                    {isExpanded === false ?
+                    <>
+                        {location && <Row className = "postLocation" >📍{location.name} </Row>}
+                        <Row className = "postCreator">👤 {post.username}</Row>
+                        <Row className = "postDescription">📙 {post.description}</Row>
+                    </>
+                    :
+                    <>
+                        {isEditing === false ? 
+                        <>
+                            {location && <Row className = "postLocation" >📍{location.name} </Row>}
+                            <Row className = "postCreator">👤 {post.username}</Row>
+                            <Row className = "postDescription">📙 {post.description}</Row>
+                            <Row>
+                                <Button variant = "success" onClick = {() => setIsEditing(true)}> Edit </Button>
+                                <Button variant = "danger" onClick = {() => handleDelete()}> Delete </Button>
+                            </Row>
+                            
+                        </>
+                        :
+                        <>
+                            {location && <Row className = "postLocation" >📍{location.name} </Row>}
+                            <Row className = "postCreator">👤 {post.username}</Row>
+                            <Row className = "postDescription">
+                                <Form.Label> Description </Form.Label>
+                                <Form.Control type = "textarea" value = {description} onChange = {(e) => setDescription(e.target.value)} />
+                            </Row>
+                            <Row>
+                                <Col><Button variant = "success" onClick = {() => handleSave()}> Save </Button></Col>
+                                <Col><Button variant = "danger" onClick = {() => handleCancel()}> Cancel </Button></Col>
+                            </Row>
+                        </>
+                        } 
+                    </>
+                    }
                 </Col>
             </Row>
             <Row className = "postAnalytics">
