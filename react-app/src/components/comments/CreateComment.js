@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import { Link, useNavigate } from "react-router-dom";
 import createComment from "../../api/comments/createComment";
 import deleteAllCommentsByPost from "../../api/comments/deleteAllCommentsByPost";
+import "../../css/createComment.css";
 
 export default function CreateComment({post}) {
     const [content, setContent] = useState("");
@@ -29,10 +30,9 @@ export default function CreateComment({post}) {
     }
 
     return (
-        <div>
-            <h2>Create Comment:</h2>
-            <p>🗿 Care to comment on this? Share it with the group! 🗿</p>
-            <div className = "createCommContainer">
+        <div className = "createCommContainer">
+            <div >
+                <p>🗿 Care to comment on this? Share it with the group! 🗿</p>
                 <h4>💭 Comment here...</h4>
                 <textarea className = "commTextarea" onChange = {(e) => setContent(e.target.value)} />
                 <Button variant="commNowButton" onClick={handleSave}>Comment Now!</Button>

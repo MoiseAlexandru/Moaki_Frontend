@@ -75,3 +75,28 @@
     background-color: var(--button-hover-color);
     color: var(--text-color);
 }
+
+.btn-success {
+    margin-top: 5px;
+    background-color: var(--green-button);
+    color: white;
+    display: inline-block;
+    width: 30%;
+}
+.btn-success:hover {
+    background-color: var(--green-button-hover);
+    color: white;
+}
+
+.btn-danger {
+    margin-top: 5px;
+    margin-left: 2px;
+    background-color: var(--red-button);
+    color: white;
+    width: 30%;
+
+}
+.btn-danger:hover {
+    background-color: var(--red-button-hover);
+    color: white;
+}

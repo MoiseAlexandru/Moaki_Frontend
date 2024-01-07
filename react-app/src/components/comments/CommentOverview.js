@@ -51,13 +51,13 @@ export default function CommentOverview({post, comment}) {
                     <span className = "buttons">
                         {isEditing ? 
                         <>
-                            <Button variant = "success" onClick = {() => handleSave()}> Save </Button>
-                            <Button variant = "danger" onClick = {() => handleCancel()}> Cancel </Button>
+                            <Button variant = "saveCommentEdit" onClick = {() => handleSave()}> Save </Button>
+                            <Button variant = "cancelCommentEdit" onClick = {() => handleCancel()}> Cancel </Button>
                         </>
                         :
                         <>
-                            <Button variant = "success" onClick = {() => handleEdit()}> <FontAwesomeIcon icon = {faEdit} /> </Button>
-                            <Button variant = "danger" onClick = {() => handleDelete()}> <FontAwesomeIcon icon = {faTrash} /> </Button>
+                            <Button variant = "editComment" onClick = {() => handleEdit()}> <FontAwesomeIcon icon = {faEdit} /> </Button>
+                            <Button variant = "deleteComment" onClick = {() => handleDelete()}> <FontAwesomeIcon icon = {faTrash} /> </Button>
                         </>
                         }
                     </span>

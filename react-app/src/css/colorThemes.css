@@ -26,4 +26,8 @@ body[data-theme="default-theme"] {
     --text-color: white;
     --header-color: white;
     --page-background: #DBECF3;
+    --green-button: rgb(0, 110, 55);
+    --green-button-hover: rgb(0, 68, 34);
+    --red-button: rgb(157, 20, 20);
+    --red-button-hover: rgb(74, 1, 1);
 }

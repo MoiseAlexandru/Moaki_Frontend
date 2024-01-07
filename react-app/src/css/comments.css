@@ -2,8 +2,9 @@
 .commContainer {
     width: 100%;
     border: 1px solid gray;
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: var(--main-bg-color);
+    margin-top: 2px;
 }
 
 .user {
@@ -27,4 +28,29 @@
     pointer-events:auto;
     outline: none;
     border: none;
+    margin-top: 0px;
+}
+
+.btn-editComment {
+    margin-top: 5px;
+    background-color: var(--green-button);
+    color: white;
+    display: inline-block;
+    margin-right: 0px;
+}
+.btn-editComment:hover {
+    background-color: var(--green-button-hover);
+    color: white;
+}
+
+.btn-deleteComment {
+    margin-top: 5px;
+    margin-left: 2px;
+    margin-right: 0px;
+    background-color: var(--red-button);
+    color: white;
+}
+.btn-deleteComment:hover {
+    background-color: var(--red-button-hover);
+    color: white;
 }
