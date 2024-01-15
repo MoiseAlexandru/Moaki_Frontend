@@ -9,7 +9,12 @@ export default function ProfilePage({username}) {
     const [posts, setPosts] = useState([]);
 
     useEffect(function() {
-        setUser(fetchUserByUsername(username))
+        async function getUser() {
+            const res = await fetchUserByUsername(username);
+            console.log(res);
+            setUser(res);
+        }
+        getUser();
     }, [username]);
     
     useEffect(function() {
@@ -20,9 +25,13 @@ export default function ProfilePage({username}) {
         getUserPosts();
     }, [username]);
 
+    if(!user)
+        return <div> Loading user... </div>;
     return (
         <>
             <div className = "user-info">
+                <h2> {user.username} </h2>
+                {console.log(user)}
                 {/*<img src = {user.photoName} alt = {`img userului ${username}`} className = "profilePic"/>*/}
             </div>
             <PostList postList = {posts} />

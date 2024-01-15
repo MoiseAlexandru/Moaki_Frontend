@@ -1,14 +1,14 @@
 import { useState } from "react";
 import MainPage from "./components/MainPage";
 import LocationSearchPage from "./components/locations/LocationSearchPage";
-import LoginPage from "./components/LoginPage";
+import LoginPages from "./components/LoginPages";
 
 function App() {
     document.body.setAttribute("data-theme", "default-theme");
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     
     function handleLogin() {
-        isLoggedIn = true;
+        setIsLoggedIn(true);
     }
 
     function handleLogout() {
@@ -17,7 +17,12 @@ function App() {
 
     return (
       <div>
-        {isLoggedIn ? <MainPage onLogout = {() => setIsLoggedIn(false)} /> : <LoginPage onLogin = {() => setIsLoggedIn(true)} />}
+        {
+            isLoggedIn ?
+            <MainPage onLogout = {() => setIsLoggedIn(false)} />
+            :
+            <LoginPages onLogin = {() => setIsLoggedIn(true)} />
+        }
       </div>
     );
 }
