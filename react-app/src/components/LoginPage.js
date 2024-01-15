@@ -1,13 +1,19 @@
 import { useState } from "react";
+import "../css/login.css";
+import Button from "react-bootstrap/Button";
 
 export default function LoginPage({onLogin}) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     return (
         <div>
-            <input type = "text" onChange = {(e) => setUsername(e.target.value)} placeholder = "username" />
-            <input type = "password" onChange = {(e) => setPassword(e.target.value)} placeholder="password" />
-            <button onClick={onLogin}> Login </button>
+            <h1 className = "title">Login</h1>
+            <h4 className = "subtitle">Strap in for another journey! Logging in is your ticket to a global gallery of travel wonders.</h4>
+            <h4 className = "subtitle"> Share pics, swap tips, and let the adventure begin!</h4>
+            <h4 className = "hashtag">🌍✈️ #JetSetLogin</h4>
+            <input className = "usernameBox" type = "text" onChange = {(e) => setUsername(e.target.value)} placeholder = "username" />
+            <input className = "passwordBox" type = "password" onChange = {(e) => setPassword(e.target.value)} placeholder="password" />
+            <Button variant="loginButton" onClick={onLogin}> Login </Button>
         </div>
     )
 }
