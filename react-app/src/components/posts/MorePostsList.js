@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import PostOverview from "./PostOverview";
 import fetchPosts from "../../api/posts/fetchPosts";
+import { fetchMorePosts } from "../../api/posts/fetchMorePosts";
 
 
 export default function MorePostsList() {
@@ -9,7 +10,8 @@ export default function MorePostsList() {
     useEffect(function() {
         async function getPosts() {
             setIsLoading(true);
-            const res = await fetchPosts();
+            const res = await fetchMorePosts("moise");
+            console.log(res);
             setPosts(res);
             setIsLoading(false);
         }

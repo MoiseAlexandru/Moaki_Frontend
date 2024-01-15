@@ -9,6 +9,9 @@ import LocationPage from "./locations/LocationPage";
 import CreatePost from "./posts/CreatePost";
 import CreateLocationPage from "./locations/CreateLocationPage";
 import PostPage from "./posts/PostPage";
+import FeedPage from "./FeedPage";
+import MorePostsList from "./posts/MorePostsList";
+import ProfilePage from "./users/ProfilePage";
 
 function LocationPageRouting() {
     const {id} = useParams();
@@ -22,6 +25,13 @@ function PostPageRouting() {
     const {id} = useParams();
     return (
         <PostPage postId = {id} />
+    )
+}
+
+function ProfilePageRouting() {
+    const {username} = useParams();
+    return (
+        <ProfilePage username = {username} />
     )
 }
 
@@ -43,6 +53,9 @@ export default function MainPage() {
                     <Route exact path = "/location/:id" element = {<LocationPageRouting />} />
                     <Route exact path = "/create-post" element = {<CreatePost />} />
                     <Route exact path = "/post/:id" element = {<PostPageRouting />} />
+                    <Route exact path = "/my-feed" element = {<FeedPage />} />
+                    <Route exact path = "/more-posts" element = {<MorePostsList />} />
+                    <Route exact path = "/profile/:username" element = {<ProfilePageRouting />} />
                 </Routes>
             </div>
         </HashRouter>

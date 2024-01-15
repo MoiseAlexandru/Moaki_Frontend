@@ -74,7 +74,7 @@ export default function PostOverview({post, isExpanded}) {
                         {isEditing === false ? 
                         <>
                             {location && <Row className = "postLocation" >📍{location.name} </Row>}
-                            <Row className = "postCreator">👤 {post.username}</Row>
+                            <Row className = "postCreator"  onClick = {() => {navigate(`/profile/${post.username}`)}}>👤 {post.username}</Row>
                             <Row className = "postDescription">📙 {post.description}</Row>
                             <Row>
                                 <Button variant = "success" onClick = {() => setIsEditing(true)}> Edit </Button>

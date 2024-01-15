@@ -13,7 +13,7 @@ export default function NavBarContainer() {
                 <Button variant="navButton" onClick={() => {navigate("/my-feed")}}>My Feed</Button>
                 <Button variant="navButton" onClick={() => {navigate("/more-posts")}}>More Posts</Button>
                 <Button variant="navButton" onClick={() => {navigate("/search-location")}}> Discover Locations </Button>
-                <Button variant="navButton" onClick={() => {navigate("/my-profile")}}>My Profile</Button>
+                <Button variant="navButton" onClick={() => {navigate("/profile/moise")}}>My Profile</Button>
             </nav>
         </>
     );
