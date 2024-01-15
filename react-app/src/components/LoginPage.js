@@ -6,7 +6,7 @@ export default function LoginPage({onLogin}) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     return (
-        <div>
+        <div className = "loginDiv">
             <h1 className = "title">Login</h1>
             <h4 className = "subtitle">Strap in for another journey! Logging in is your ticket to a global gallery of travel wonders.</h4>
             <h4 className = "subtitle"> Share pics, swap tips, and let the adventure begin!</h4>
