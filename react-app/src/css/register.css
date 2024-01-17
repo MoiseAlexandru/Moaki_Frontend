@@ -1,0 +1,63 @@
+.registerDiv{
+    background-image: url('../../public/background.jpeg'); /* Replace 'your-image-url.jpg' with the path to your image */
+    background-size: cover; /* This property ensures that the background image covers the entire container */
+    background-repeat: no-repeat; /* This property prevents the background image from repeating */
+    background-position: center; /* This property centers the background image horizontally and vertically */
+    height: 100vh; /* This ensures the body takes up the full height of the viewport */
+    margin: 0; /* Remove default margin */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--button-color);
+    margin-bottom: 3rem;
+}
+
+.subtitle {
+    color: white;
+    margin-left: 20rem;
+    margin-right: 20rem;
+    font-size: 20px;
+}
+
+.usernameBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    width: 20rem;
+}
+
+.passwordBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    width: 20rem;
+
+}
+.hashtag {
+    color: var(--button-color);
+}
+.btn-registerButton{
+    width: 10rem;
+    background-color: var(--button-color);
+    color: var(--text-color);
+    padding: 1rem;
+}
+
+.btn-registerButton:hover {
+    background-color: var(--button-hover-color);
+    color: var(--text-color);
+}

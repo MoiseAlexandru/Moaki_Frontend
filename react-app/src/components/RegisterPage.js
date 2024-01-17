@@ -2,6 +2,8 @@ import { useNavigate } from "react-router-dom";
 import encryptPass from "../utils/encryptPass";
 import { useState } from "react";
 import registerRequest from "../api/user/registerRequest";
+import "../css/register.css";
+import Button from "react-bootstrap/Button";
 
 
 export default function RegisterPage({onRegister}) {
@@ -30,11 +32,17 @@ export default function RegisterPage({onRegister}) {
     }
 
     return (
-        <div>
-            <input type = "text" placeholder = "username" onChange = {(e) => setUsername(e.target.value)} />
-            <input type = "password" placeholder = "password" onChange = {(e) => setPassword(e.target.value)} />
-            <input type = "password" placeholder = "confirm password" onChange = {(e) => setConfirmPassword(e.target.value)} />
-            <button onClick = {handleRegisterTry}> Register now! </button>
+        <div className = "registerDiv">
+
+
+            <h1 className = "title">Registration</h1>
+            <h4 className = "hashtag">Welcome to Moaki - Your Social Hub for Travelers!</h4>
+            <h4 className = "subtitle">Embark on a journey of discovery and connection with Moaki, the ultimate social media app designed exclusively for passionate travelers like you.</h4>
+            <h4 className = "subtitle">Join our vibrant community and share your adventures with fellow explorers from around the globe.</h4>
+            <input className = "usernameBox" type = "text" placeholder = "username" onChange = {(e) => setUsername(e.target.value)} />
+            <input className = "passwordBox" type = "password" placeholder = "password" onChange = {(e) => setPassword(e.target.value)} />
+            <input className = "passwordBox" type = "password" placeholder = "confirm password" onChange = {(e) => setConfirmPassword(e.target.value)} />
+            <Button variant="registerButton" onClick={handleRegisterTry}> Register now! </Button>
             {!passwordMatch && <p> Passwords do not match, try again. </p>}
         </div>
     )
