@@ -44,6 +44,7 @@ export default function RegisterPage({onRegister}) {
             <input className = "passwordBox" type = "password" placeholder = "confirm password" onChange = {(e) => setConfirmPassword(e.target.value)} />
             <Button variant="registerButton" onClick={handleRegisterTry}> Register now! </Button>
             {!passwordMatch && <p> Passwords do not match, try again. </p>}
+            <div onClick = {() => navigate("/login")}> Login instead </div>
         </div>
     )
 }

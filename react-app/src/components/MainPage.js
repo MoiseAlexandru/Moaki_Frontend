@@ -35,11 +35,11 @@ function ProfilePageRouting() {
     )
 }
 
-export default function MainPage() {
+export default function MainPage({onLogout}) {
     return (
         <HashRouter>
             
-            <div className="navBar"><NavBarContainer /></div>
+            <div className="navBar"><NavBarContainer onLogout = {onLogout}/></div>
             <div className = "pageContainer">
                 <div className = "firstCol"> <NotificationsContainer /> </div>
                 <div className = "thirdCol"> <FollowedByMeContainer /> </div>

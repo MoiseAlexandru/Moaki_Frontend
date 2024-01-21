@@ -2,7 +2,7 @@
 
 export default function encryptPass(password) {
     let bcrypt = require("bcryptjs");
-    let salt = bcrypt.genSaltSync(10);
-    let hash = bcrypt.hashSync(password, salt);
+    const fixedSalt = "$2a$10$abcdefghabcdefghabcdefgh";
+    let hash = bcrypt.hashSync(password, fixedSalt);
     return hash;
 }

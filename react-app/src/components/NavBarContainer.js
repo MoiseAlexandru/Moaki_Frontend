@@ -3,8 +3,14 @@ import "../css/navBarContainer.css";
 import ColorThemePicker from "./ColorThemePicker";
 import { Link, useNavigate } from "react-router-dom";
 
-export default function NavBarContainer() {
+export default function NavBarContainer({onLogout}) {
     const navigate = useNavigate();
+
+    function handleLogout() {
+        navigate("/login");
+        onLogout();
+    }
+
     return (
         <>
             <nav className="navigation-bar">
@@ -14,6 +20,7 @@ export default function NavBarContainer() {
                 <Button variant="navButton" onClick={() => {navigate("/more-posts")}}>More Posts</Button>
                 <Button variant="navButton" onClick={() => {navigate("/search-location")}}> Discover Locations </Button>
                 <Button variant="navButton" onClick={() => {navigate("/profile/moise")}}>My Profile</Button>
+                <Button variant="navButton" onClick={() => handleLogout()}>Log Out</Button>
             </nav>
         </>
     );
