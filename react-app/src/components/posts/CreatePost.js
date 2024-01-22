@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Searchbar from "../Searchbar";
 import locationFilter from "../../api/location/locationFilter";
 import LocationResult from "../locations/LocationResult";
@@ -15,7 +15,6 @@ export default function CreatePost() {
     const [description, setDescription] = useState("");
     const [photo, setPhoto] = useState(null);
     const [score, setScore] = useState(5);
-    const [username, setUsername] = useState("moise");
     const navigate = useNavigate();
 
     function handleLocationSelect(newLocation) {
@@ -45,7 +44,7 @@ export default function CreatePost() {
       }
 
     async function handleSave() {
-        
+        const username = localStorage.getItem("username");
         await createPost({
             id: getRandomInt(10000),
             locationId: location.id,

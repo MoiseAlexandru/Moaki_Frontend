@@ -9,8 +9,8 @@ export default async function fetchUserByUsername(username) {
                 'Content-Type': 'application/json'
             }
         });
-        console.log(user);
         const user = await response.json();
+        //console.log(user);
         return user;
     }
     catch(error) {

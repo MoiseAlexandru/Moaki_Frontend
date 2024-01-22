@@ -19,8 +19,14 @@ export default function PostOverview({post, isExpanded}) {
     const [description, setDescription] = useState(post.description);
     const [isEditing, setIsEditing] = useState(false);
     const [liked, setLiked] = useState(false);
+    const [isHisPost, setIsHisPost] = useState(false);
+
     const navigate = useNavigate();
 
+    useEffect(function() {
+        const username = localStorage.getItem("username");
+        setIsHisPost(username === post.username)
+    }, [])
     
     useEffect(function() {
         async function fetchLocationData() {
@@ -39,8 +45,9 @@ export default function PostOverview({post, isExpanded}) {
     */
 
     async function handleDelete() {
+        const username = localStorage.getItem("username");
         console.log("deleting post with id", post.id);
-        await deletePost(post);
+        await deletePost(post, username);
         navigate(`/location/${post.locationId}`);
     }
 
@@ -76,10 +83,12 @@ export default function PostOverview({post, isExpanded}) {
                             {location && <Row className = "postLocation" >📍{location.name} </Row>}
                             <Row className = "postCreator"  onClick = {() => {navigate(`/profile/${post.username}`)}}>👤 {post.username}</Row>
                             <Row className = "postDescription">📙 {post.description}</Row>
-                            <Row>
-                                <Button variant = "success" onClick = {() => setIsEditing(true)}> Edit </Button>
-                                <Button variant = "danger" onClick = {() => handleDelete()}> Delete </Button>
-                            </Row>
+                            {isHisPost && 
+                                <Row>
+                                    <Button variant = "success" onClick = {() => setIsEditing(true)}> Edit </Button>
+                                    <Button variant = "danger" onClick = {() => handleDelete()}> Delete </Button>
+                                </Row>
+                            }
                             
                         </>
                         :

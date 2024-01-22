@@ -13,7 +13,8 @@ export default async function createPost(postDetails, image) {
         const response = await fetch(`http://localhost:8080/post/add`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'X-Username': postDetails.username
             },
             body: JSON.stringify(post)
         });

@@ -16,6 +16,12 @@ import deleteComment from '../../api/comments/deleteComment';
 export default function CommentOverview({post, comment}) {
     const [isEditing, setIsEditing] = useState(false);
     const [textComment, setTextComment] = useState(comment.content);
+    const [isHisComment, setIsHisComment] = useState(false);
+
+    useEffect(function() {
+        const username = localStorage.getItem("username");
+        setIsHisComment(username == comment.username);
+    }, [])
 
     async function handleEdit() {
         setIsEditing(true);
@@ -48,7 +54,7 @@ export default function CommentOverview({post, comment}) {
             <Container className = "commContainer">
                 <Row>
                     <span className = "user"> @{commObj.username}: </span>
-                    <span className = "buttons">
+                    {isHisComment && <span className = "buttons">
                         {isEditing ? 
                         <>
                             <Button variant = "saveCommentEdit" onClick = {() => handleSave()}> Save </Button>
@@ -61,6 +67,7 @@ export default function CommentOverview({post, comment}) {
                         </>
                         }
                     </span>
+                    }
                 </Row>
                 <Row>
                     <Form.Control type = "textarea" className = {isEditing ? "editingTextare" : "readonlyTextarea"} value = {textComment} readOnly = {!isEditing} placeholder="comment here" onChange = {(e) => handleCommentChange(e)} />

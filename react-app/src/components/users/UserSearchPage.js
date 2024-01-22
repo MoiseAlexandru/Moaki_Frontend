@@ -22,7 +22,7 @@ export default function UserPage() {
 
     function handleUserSelect(user) {
         setQuery(user.username);
-        navigate(`/user/${user.username}`)
+        navigate(`/profile/${user.username}`)
     }
 
     async function handleUserEnter(input, controller) {

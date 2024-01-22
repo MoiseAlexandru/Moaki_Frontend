@@ -7,7 +7,6 @@ import "../../css/createComment.css";
 
 export default function CreateComment({post}) {
     const [content, setContent] = useState("");
-    const [username, setUsername] = useState("moise");
     const navigate = useNavigate();
 
     function getRandomInt(max) {
@@ -15,12 +14,12 @@ export default function CreateComment({post}) {
       }
 
     async function handleSave() {
-        
+        const username = localStorage.getItem("username");
         await createComment({
             id: getRandomInt(10000),
             username: username,
             content: content,
-        }, post);
+        }, post, username);
 
         window.location.reload(false, true);
     }
