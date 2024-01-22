@@ -32,3 +32,17 @@ a:hover {
 }
 
 
+nav .btn-logoutButton {
+    display: inline;
+    height: 4rem;
+    margin-left: 50rem;
+    color: var(--header-color);
+    text-decoration: none;
+    border-color: var(--button-color);
+    margin-bottom: 1rem;
+    background-color: var(--button-color);
+}
+.btn-logoutButton:hover {
+    background-color: var(--button-hover-color);
+}
+

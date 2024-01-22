@@ -20,7 +20,7 @@ export default function NavBarContainer({onLogout}) {
                 <Button variant="navButton" onClick={() => {navigate("/more-posts")}}>More Posts</Button>
                 <Button variant="navButton" onClick={() => {navigate("/search-location")}}> Discover Locations </Button>
                 <Button variant="navButton" onClick={() => {navigate("/profile/moise")}}>My Profile</Button>
-                <Button variant="navButton" onClick={() => handleLogout()}>Log Out</Button>
+                <Button variant="logoutButton" onClick={() => handleLogout()}>Log Out</Button>
             </nav>
         </>
     );
