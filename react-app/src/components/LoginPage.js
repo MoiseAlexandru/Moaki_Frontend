@@ -36,7 +36,10 @@ export default function LoginPage({onLogin}) {
                 <input className = "passwordBox" type = "password" onChange = {(e) => setPassword(e.target.value)} placeholder="password" />
                 <Button variant="loginButton" onClick={handleLogin}> Login </Button>
                 {incorrectPass && <div> Incorrect password </div>}
-                <div onClick = {() => navigate("/register")}> New here? Register now! </div>
+                <div className = "changePage">
+                    <h4 className = "changePageText" >New here?</h4>
+                    <Button variant="loginButton" onClick = {() => navigate("/register")}> Register now! </Button>
+                </div>
             </div>
         </>
     )
