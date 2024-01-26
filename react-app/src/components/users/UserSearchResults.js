@@ -52,7 +52,7 @@ export default function UserSearchResults({userObj}) {
         <Container className="userContainer" onClick = {handleUserSelect}>
             <Row>
             <Col className="picContainer">
-            <img src = {userObj.photoname} alt = {userObj.username} className="profilepic"/>
+            <img src = {userObj.image} alt = {userObj.username} className="profilepic"/>
             </Col>
             
             <Col className="infoContainer">

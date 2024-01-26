@@ -23,12 +23,15 @@
 
 .followEntry {
     margin: auto;
-}
-
-.followEntry {
+    cursor: pointer;
     height: 3rem;
     padding: 0.5rem;
     padding-left: 30%;
+}
+
+.followEntry:hover {
+    background-color: #ededed;
+    transition: 0.5s;
 }
 
 .followEntry span {

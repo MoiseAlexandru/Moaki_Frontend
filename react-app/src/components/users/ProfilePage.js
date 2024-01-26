@@ -6,13 +6,15 @@ import UploadAndDisplayImage from "../images/UploadAndDisplayImage";
 import Button from "react-bootstrap/esm/Button";
 import "../../css/profilePage.css";
 import editUser from "../../api/user/editUser";
+import imageToBase64 from "../../utils/imageToBase64";
 
 
 export default function ProfilePage({username}) {
     const [user, setUser] = useState(null);
     const [posts, setPosts] = useState([]);
     const [photo, setPhoto] = useState(null);
-    const [loggedUser, setLoggedUser] = useState(null);;
+    const [loggedUser, setLoggedUser] = useState(null);
+    const [isEditing, setIsEditing] = useState(false);
     /*const [username, setUsername] = useState("");
 
     useEffect(function() {
@@ -49,12 +51,14 @@ export default function ProfilePage({username}) {
             setPhoto(user.image);
     }, [user])
 
-    function handleImageChange(image) {
-        setPhoto(image)
+    async function handleImageChange(image) {
+        const imageString = await imageToBase64(image);
+        setPhoto(imageString)
     }
 
     async function handleImageSave() {
         const newUser = {...user, image: photo};
+        setIsEditing(false);
         await editUser(username, newUser);
     }
 
@@ -67,9 +71,19 @@ export default function ProfilePage({username}) {
                 <h2> {user.username} </h2>
                 {/*{console.log(user)}
                 <img src = {user.photoName} alt = {`img userului ${username}`} className = "profilePic"/>*/}
-                <UploadAndDisplayImage handleImageChange = {handleImageChange} initialImage={photo} canBeChanged = {username === loggedUser} />
+                {/*console.log("user image:", photo)*/}
                 
-                {username === loggedUser && <Button onClick = {handleImageSave} > Save </Button>}
+                <UploadAndDisplayImage handleImageChange = {handleImageChange} image={photo} canBeChanged = {username === loggedUser && isEditing} />
+                {username === loggedUser &&
+                    <>
+                        {isEditing ?
+                            <Button onClick = {handleImageSave} > Save </Button>
+                            : 
+                            <Button onClick = {() => setIsEditing(true)}> Edit </Button>
+                        }
+                    </>
+                }
+                
             </div>
             <PostList postList = {posts} />
         </>
