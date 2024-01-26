@@ -21,7 +21,9 @@ export default function PostOverview({post, isExpanded}) {
     const [isEditing, setIsEditing] = useState(false);
     const [liked, setLiked] = useState(false);
     const [isHisPost, setIsHisPost] = useState(false);
+    const [rating, setRating] = useState(0);
 
+    const initialRating = post.rating;
     const navigate = useNavigate();
 
     useEffect(function() {
@@ -35,7 +37,7 @@ export default function PostOverview({post, isExpanded}) {
         }
         fetchLocationData();
     }, [post.locationId])
-    
+
     /*
     useEffect(function() {
         async function getLikedStatus() {
@@ -52,8 +54,10 @@ export default function PostOverview({post, isExpanded}) {
         navigate(`/location/${post.locationId}`);
     }
 
+    console.log(post);
+    console.log(rating);
     async function handleSave() {
-        await editPost(post.id, {...post, description: description});
+        await editPost(post.id, {...post, description: description, score: rating > 0 ? rating : initialRating});
         setIsEditing(false);
         window.location.reload(false);
     }
@@ -61,6 +65,10 @@ export default function PostOverview({post, isExpanded}) {
     async function handleCancel() {
         setDescription(post.description);
         setIsEditing(false);
+    }
+
+    function onChangeRating(newRating) {
+        setRating(newRating);
     }
 
     return (
@@ -101,7 +109,7 @@ export default function PostOverview({post, isExpanded}) {
                                 <Form.Control type = "textarea" value = {description} onChange = {(e) => setDescription(e.target.value)} />
                             </Row>
                             <Row classname = "postRating">
-                                <StarRating size = {40} maxRating = {5} defaultRating={0} />
+                                <StarRating size = {40} maxRating = {5} defaultRating={initialRating} onSetRating = {onChangeRating}/>
                             </Row>
                             <Row>
                                 <Col><Button variant = "success" onClick = {() => handleSave()}> Save </Button></Col>

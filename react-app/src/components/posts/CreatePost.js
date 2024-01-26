@@ -72,7 +72,7 @@ export default function CreatePost() {
                 <h4>🖼️ Add an image!</h4>
                 <UploadAndDisplayImage className = "imageInput" handleImageChange = {handleImageChange} canBeChanged = {true}/>
                 <h4>⭐ How much did you like it there?</h4>
-                <input type = "number" placeholder = "Score ( ? / 10 )" className = "scoreInput" onChange = {(e) => handleScoreChange(e)} />
+                <input type = "number" placeholder = "Score ( ? / 5 )" className = "scoreInput" onChange = {(e) => handleScoreChange(e)} />
                 <h4>💭 Write your thoughts here...</h4>
                 <textarea className = "descriptionTextarea" onChange = {(e) => setDescription(e.target.value)} />
                 <Button variant="postNowButton" onClick={handleSave}>Post Now!</Button>
