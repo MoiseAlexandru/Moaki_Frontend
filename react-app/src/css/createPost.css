@@ -23,3 +23,7 @@
     background-color: var(--button-hover-color);
     color: var(--text-color);
 }
+
+.imageInput {
+    padding: 1rem;
+}
