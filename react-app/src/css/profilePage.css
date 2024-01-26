@@ -1,4 +1,16 @@
+.username {
+    color: var(--button-color);
+    text-align: center;
+}
+.imageSelect {
+    padding: 2rem;
+    margin-left: 10rem;
+}
 
-.userInfo {
-    border: 1px solid black;
+.imageInput { 
+    padding: 1rem;
+}
+
+.editButton { 
+    margin-left: 1rem;
 }

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import imageToBase64 from "../../utils/imageToBase64";
+import "../../css/profilePage.css";
 
 export default function UploadAndDisplayImage({handleImageChange, image, canBeChanged = false}) {
     
@@ -14,7 +15,7 @@ export default function UploadAndDisplayImage({handleImageChange, image, canBeCh
     return (
         <div>
             {image && <img className = "imageSelect" src = {image} alt = "imagine" /> }
-            {canBeChanged && <input type = "file" name = "myImage" onChange = {(e) => handleImageSet(e)}></input>}
+            {canBeChanged && <input className = "imageInput" type = "file" name = "myImage" onChange = {(e) => handleImageSet(e)}></input>}
         </div>
     );
 }

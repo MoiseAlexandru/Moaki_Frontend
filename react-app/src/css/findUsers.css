@@ -19,13 +19,23 @@
     max-width: 70% !important;
 }
 
-.btn-followButton, .btn-unfollowButton{
+.btn-followButton{
     width: 10rem;
     background-color: var(--button-color);
     color: var(--text-color);
 }
 
-.btn-followButton:hover, .btn-unfollowButton:hover {
+.btn-unfollowButton {
+    width: 10rem;
+    background-color: var(--page-background);
+    color: var(--button-color);
+}
+
+.btn-followButton:hover {
+    background-color: var(--button-hover-color);
+    color: var(--text-color);
+}
+.btn-unfollowButton:hover {
     background-color: var(--button-hover-color);
     color: var(--text-color);
 }

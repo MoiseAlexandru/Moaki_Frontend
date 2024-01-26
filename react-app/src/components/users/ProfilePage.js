@@ -68,18 +68,18 @@ export default function ProfilePage({username}) {
     return (
         <>
             <div className = "userInfo">
-                <h2> {user.username} </h2>
+                <h2 className = "username"> @{user.username} </h2>
                 {/*{console.log(user)}
                 <img src = {user.photoName} alt = {`img userului ${username}`} className = "profilePic"/>*/}
                 {/*console.log("user image:", photo)*/}
                 
-                <UploadAndDisplayImage handleImageChange = {handleImageChange} image={photo} canBeChanged = {username === loggedUser && isEditing} />
+                <UploadAndDisplayImage handleImageChange  = {handleImageChange} className = "profilePicture" image={photo} canBeChanged = {username === loggedUser && isEditing} />
                 {username === loggedUser &&
                     <>
                         {isEditing ?
-                            <Button onClick = {handleImageSave} > Save </Button>
+                            <Button className = "editButton" onClick = {handleImageSave} > Save </Button>
                             : 
-                            <Button onClick = {() => setIsEditing(true)}> Edit </Button>
+                            <Button className = "editButton" onClick = {() => setIsEditing(true)}> Edit </Button>
                         }
                     </>
                 }
