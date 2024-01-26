@@ -12,12 +12,13 @@
 }
 
 .postPic {
-    height: 25rem;
-    width: 25rem;
+    height: 20rem;
+    width: 20rem;
     display: block;
     margin-left: auto;
     margin-right: auto;
     padding: 0.5rem;
+    object-fit: cover;
 }
 
 .postDetails {
