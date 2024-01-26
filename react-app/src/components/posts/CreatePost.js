@@ -44,6 +44,8 @@ export default function CreatePost() {
       }
 
     async function handleSave() {
+        if(!photo)
+            return;
         const username = localStorage.getItem("username");
         await createPost({
             id: getRandomInt(10000),
@@ -68,7 +70,7 @@ export default function CreatePost() {
                 <h4>📍 Where is this place?</h4>
                 <Searchbar className = "locationSearchbar" onSelect = {handleLocationSelect} onEnter = {handleLocationEnter} filterFunction = {locationFilter} resultEntry={LocationResult} placeholderText = "Pick location..." forcedValue={locationName}/>
                 <h4>🖼️ Add an image!</h4>
-                <UploadAndDisplayImage className = "imageInput" handleImageChange = {handleImageChange}/>
+                <UploadAndDisplayImage className = "imageInput" handleImageChange = {handleImageChange} canBeChanged = {true}/>
                 <h4>⭐ How much did you like it there?</h4>
                 <input type = "number" placeholder = "Score ( ? / 10 )" className = "scoreInput" onChange = {(e) => handleScoreChange(e)} />
                 <h4>💭 Write your thoughts here...</h4>
