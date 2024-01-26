@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import editPost from '../../api/posts/editPost';
 import deletePost from '../../api/posts/deletePost';
+import StarRating from '../utils/StarRating';
 
 export default function PostOverview({post, isExpanded}) {
 
@@ -26,7 +27,7 @@ export default function PostOverview({post, isExpanded}) {
     useEffect(function() {
         const username = localStorage.getItem("username");
         setIsHisPost(username === post.username)
-    }, [])
+    }, [post.username])
     
     useEffect(function() {
         async function fetchLocationData() {
@@ -98,6 +99,9 @@ export default function PostOverview({post, isExpanded}) {
                             <Row className = "postDescription">
                                 <Form.Label> Description </Form.Label>
                                 <Form.Control type = "textarea" value = {description} onChange = {(e) => setDescription(e.target.value)} />
+                            </Row>
+                            <Row classname = "postRating">
+                                <StarRating size = {40} maxRating = {5} defaultRating={0} />
                             </Row>
                             <Row>
                                 <Col><Button variant = "success" onClick = {() => handleSave()}> Save </Button></Col>

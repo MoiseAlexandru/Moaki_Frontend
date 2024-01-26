@@ -2,7 +2,7 @@ import { useState } from "react";
 import imageToBase64 from "../../utils/imageToBase64";
 import "../../css/profilePage.css";
 
-export default function UploadAndDisplayImage({handleImageChange, image, canBeChanged = false}) {
+export default function UploadAndDisplayImage({handleImageChange, image = null, canBeChanged = false}) {
     
     
     async function handleImageSet(e) {

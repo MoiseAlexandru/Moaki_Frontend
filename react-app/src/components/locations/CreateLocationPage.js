@@ -23,8 +23,8 @@ export default function CreateLocationPage() {
         setIsSubmitting(true);
         await createLocation(name, address, city, country, locationString);
         setIsSubmitting(false);
-        const newLocationId = await locationFilter(name)[0].id;
-        navigate(`/location/${newLocationId}`);
+        const locationFilterRes = await locationFilter(name);
+        navigate(`/location/${locationFilterRes[0].id}`);
     }
 
     return (
