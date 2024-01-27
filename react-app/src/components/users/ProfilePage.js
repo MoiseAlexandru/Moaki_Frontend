@@ -12,7 +12,7 @@ import imageToBase64 from "../../utils/imageToBase64";
 export default function ProfilePage({username}) {
     const [user, setUser] = useState(null);
     const [posts, setPosts] = useState([]);
-    const [photo, setPhoto] = useState(null);
+    const [photo, setPhoto] = useState("");
     const [loggedUser, setLoggedUser] = useState(null);
     const [isEditing, setIsEditing] = useState(false);
     /*const [username, setUsername] = useState("");
@@ -23,7 +23,7 @@ export default function ProfilePage({username}) {
     */
     useEffect(function() {
         setLoggedUser(localStorage.getItem("username"));
-    }, []);
+    }, [username]);
 
     useEffect(function() {
         async function getUser() {
@@ -47,7 +47,7 @@ export default function ProfilePage({username}) {
 
     useEffect(function() {
         console.log("user curent ", user);
-        if(user && user.image)
+        if(user)
             setPhoto(user.image);
     }, [user])
 

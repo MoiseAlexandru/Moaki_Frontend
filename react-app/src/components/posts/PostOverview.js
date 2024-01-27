@@ -25,6 +25,7 @@ export default function PostOverview({post, isExpanded}) {
     const [liked, setLiked] = useState(false);
     const [rating, setRating] = useState(0);
     const [username, setUsername] = useState("");
+    const [initialLikedStatus, setInitialLikedStatus] = useState(false);
 
     const isHisPost = username === post.username;
     const initialRating = post.rating;
@@ -47,6 +48,7 @@ export default function PostOverview({post, isExpanded}) {
                 return;
             const likedStatus = await fetchLikedStatus(post.id, username)
             setLiked(likedStatus);
+            setInitialLikedStatus(likedStatus)
         }
         getLikedStatus();
     }, [post.id, username]);
@@ -100,7 +102,7 @@ export default function PostOverview({post, isExpanded}) {
             <Container className = "postContainer">
             <Row>
                 <Col className = "picContainer">
-                <img src = {post.image} alt = {post.photopath} className="postPic"/>
+                <img src = {post.image !== "null" ? post.image : "/nothing.png"} alt = {post.photopath} className="postPic"/>
            </Col>
                 <Col className = "postDetails">
                     {isExpanded === false ?
@@ -133,7 +135,7 @@ export default function PostOverview({post, isExpanded}) {
                                 <Form.Control type = "textarea" value = {description} onChange = {(e) => setDescription(e.target.value)} />
                             </Row>
                             <Row classname = "postRating">
-                                <StarRating size = {40} maxRating = {5} defaultRating={initialRating} onSetRating = {onChangeRating}/>
+                                <StarRating size = {40} maxRating = {5} defaultRating={initialRating} onSetRating = {onChangeRating} imageType = "post" />
                             </Row>
                             <Row>
                                 <Col><Button variant = "success" onClick = {() => handleSave()}> Save </Button></Col>
@@ -147,7 +149,7 @@ export default function PostOverview({post, isExpanded}) {
             </Row>
             <Row className = "postAnalytics">
                 <Col className = "postScore">⭐ {post.score} Stars</Col>
-                <Col><Button variant="likePostButton" onClick = {handleLikeChange}>{liked ? "❤" : "🤍"} {post.numberOfLikes} Likes</Button></Col>
+                <Col><Button variant="likePostButton" onClick = {handleLikeChange}>{liked ? "❤" : "🤍"} {post.numberOfLikes + liked - initialLikedStatus} Likes</Button></Col>
                 <Col><Button variant="viewPostButton"  onClick={() => {navigate(`/post/${post.id}`)}}>💬 {post.commentIds ? post.commentIds.length : 0} Comments</Button></Col>
             </Row>
             </Container>

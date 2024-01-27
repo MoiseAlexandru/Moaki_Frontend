@@ -6,7 +6,7 @@ export default function FollowEntry({user}) {
     const onlineStatus = user.online === 0 ?  "offline" : "online";
     return (
         <div className = {`followEntry ${onlineStatus}`} onClick = {() => navigate(`/profile/${user.username}`)}>
-            <span> <img className = "userSmallImg" src =  {user.image} alt = "imagine" /> </span>
+            <span> <img className = "userSmallImg" src =  {user.image ? user.image : "/user-default.png"} alt = "imagine" /> </span>
             <span> {user.username} </span>
         </div>
     )
