@@ -12,6 +12,9 @@ import Form from 'react-bootstrap/Form';
 import editPost from '../../api/posts/editPost';
 import deletePost from '../../api/posts/deletePost';
 import StarRating from '../utils/StarRating';
+import { fetchLikedStatus } from '../../api/posts/fetchLikedStatus';
+import unlikePost from '../../api/posts/unlikePost';
+import likePost from '../../api/posts/likePost';
 
 export default function PostOverview({post, isExpanded}) {
 
@@ -20,23 +23,33 @@ export default function PostOverview({post, isExpanded}) {
     const [description, setDescription] = useState(post.description);
     const [isEditing, setIsEditing] = useState(false);
     const [liked, setLiked] = useState(false);
-    const [isHisPost, setIsHisPost] = useState(false);
     const [rating, setRating] = useState(0);
+    const [username, setUsername] = useState("");
 
+    const isHisPost = username === post.username;
     const initialRating = post.rating;
     const navigate = useNavigate();
 
     useEffect(function() {
-        const username = localStorage.getItem("username");
-        setIsHisPost(username === post.username)
-    }, [post.username])
+        setUsername(localStorage.getItem("username"));
+    }, []);
     
     useEffect(function() {
         async function fetchLocationData() {
             setLocation(await fetchLocationById(post.locationId));
         }
         fetchLocationData();
-    }, [post.locationId])
+    }, [post.locationId]);
+
+    useEffect(function() {
+        async function getLikedStatus() {
+            if(!username)
+                return;
+            const likedStatus = await fetchLikedStatus(post.id, username)
+            setLiked(likedStatus);
+        }
+        getLikedStatus();
+    }, [post.id, username]);
 
     /*
     useEffect(function() {
@@ -65,6 +78,17 @@ export default function PostOverview({post, isExpanded}) {
     async function handleCancel() {
         setDescription(post.description);
         setIsEditing(false);
+    }
+
+    async function handleLikeChange() {
+        if(liked === true) {
+            setLiked(false);
+            await unlikePost(post.id, username);
+        }
+        else {
+            setLiked(true);
+            await likePost(post.id, username);
+        }
     }
 
     function onChangeRating(newRating) {
@@ -123,7 +147,7 @@ export default function PostOverview({post, isExpanded}) {
             </Row>
             <Row className = "postAnalytics">
                 <Col className = "postScore">⭐ {post.score} Stars</Col>
-                <Col><Button variant="likePostButton">❤️ {post.likes} Likes</Button></Col>
+                <Col><Button variant="likePostButton" onClick = {handleLikeChange}>{liked ? "❤" : "🤍"} {post.numberOfLikes} Likes</Button></Col>
                 <Col><Button variant="viewPostButton"  onClick={() => {navigate(`/post/${post.id}`)}}>💬 {post.commentIds ? post.commentIds.length : 0} Comments</Button></Col>
             </Row>
             </Container>
