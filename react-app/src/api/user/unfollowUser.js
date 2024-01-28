@@ -1,9 +1,10 @@
+import api_url from "../config";
 
 
 
 export default async function unfollowUser(sender, receiver, currentUser) {
     try {
-        const response = await fetch(`http://localhost:8080/user/unfollow/${sender}/${receiver}`, {
+        const response = await fetch(`${api_url}/user/unfollow/${sender}/${receiver}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

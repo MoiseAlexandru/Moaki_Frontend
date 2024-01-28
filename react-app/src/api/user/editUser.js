@@ -1,10 +1,11 @@
+import api_url from "../config";
 
 
 export default async function editUser(username, user) {
     console.log(username, user);
-    console.log("path:", `http://localhost:8080/user/edit/${username}`);
+    console.log("path:", `${api_url}/user/edit/${username}`);
     try {
-        const response = await fetch(`http://localhost:8080/user/edit/${username}`, {
+        const response = await fetch(`${api_url}/user/edit/${username}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

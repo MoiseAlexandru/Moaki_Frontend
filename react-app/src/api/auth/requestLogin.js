@@ -1,10 +1,11 @@
+import api_url from "../config";
 
 
 export default async function requestLogin(username, hashedPassword) {
     const user = {username: username, password: hashedPassword};
     //console.log(user);
     try {
-        const response = await fetch(`http://localhost:8080/user/login`, {
+        const response = await fetch(`${api_url}/user/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -1,7 +1,8 @@
+import api_url from "../config";
 
 export default async function fetchLocationById(locationId) {
     try {
-        const response = await fetch(`http://localhost:8080/location/get/${locationId}`, {
+        const response = await fetch(`${api_url}/location/get/${locationId}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'

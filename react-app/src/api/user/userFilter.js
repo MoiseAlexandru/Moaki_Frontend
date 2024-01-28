@@ -1,3 +1,4 @@
+import api_url from "../config";
 
 
 export default async function userFilter(query, controller) {
@@ -6,7 +7,7 @@ export default async function userFilter(query, controller) {
     
     try {
         console.log("query: ", query);
-        const response = await fetch(`http://localhost:8080/user/users`, {
+        const response = await fetch(`${api_url}/user/users`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'

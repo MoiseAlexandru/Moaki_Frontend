@@ -1,4 +1,5 @@
 import { commList } from "../../dummydata";
+import api_url from "../config";
 
 
 export default async function createComment(commDetails, post, username) {
@@ -11,7 +12,7 @@ export default async function createComment(commDetails, post, username) {
     console.log(newPost);
 
     try {
-        const response1 = await fetch(`http://localhost:8080/post/edit/${post.id}`, {
+        const response1 = await fetch(`${api_url}/post/edit/${post.id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -21,7 +22,7 @@ export default async function createComment(commDetails, post, username) {
         });
 
         
-        const response2 = await fetch(`http://localhost:8080/comment/add`, {
+        const response2 = await fetch(`${api_url}/comment/add`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

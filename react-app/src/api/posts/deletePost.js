@@ -1,5 +1,6 @@
 import sleep from "../../utils/sleep";
 import deleteAllCommentsByPost from "../comments/deleteAllCommentsByPost";
+import api_url from "../config";
 
 export default async function deletePost(post, username) {
 
@@ -7,7 +8,7 @@ export default async function deletePost(post, username) {
     console.log(post.username, username);
     console.log(post.id)
     try {
-        const response = await fetch(`http://localhost:8080/post/delete/${post.id}`, {
+        const response = await fetch(`${api_url}/post/delete/${post.id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',

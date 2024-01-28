@@ -1,8 +1,9 @@
 import { postList } from "../../dummydata";
+import api_url from "../config";
 
 export default async function fetchPostsByLocationId(locationId) {
     try {
-        const response = await fetch(`http://localhost:8080/post/get/location/${locationId}`, {
+        const response = await fetch(`${api_url}/post/get/location/${locationId}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'

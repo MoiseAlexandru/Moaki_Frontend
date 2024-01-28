@@ -1,9 +1,10 @@
+import api_url from "../config";
 
 
 export default async function deleteOnlyComment(commentId) {
     
     try {
-        const response = await fetch(`http://localhost:8080/comment/delete/${commentId}`, {
+        const response = await fetch(`${api_url}/comment/delete/${commentId}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',

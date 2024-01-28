@@ -1,10 +1,11 @@
 import { commList } from "../../dummydata";
+import api_url from "../config";
 
 export default async function fetchCommentById(commId) {
 
     console.log("se cere commentul", commId);
     try {
-        const response = await fetch(`http://localhost:8080/comment/get/${commId}`, {
+        const response = await fetch(`${api_url}/${commId}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'

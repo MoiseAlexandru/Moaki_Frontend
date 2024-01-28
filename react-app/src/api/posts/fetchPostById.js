@@ -1,9 +1,10 @@
 import { postList } from "../../dummydata";
+import api_url from "../config";
 
 export default async function fetchPostById(postId) {
     
     try {
-        const response = await fetch(`http://localhost:8080/post/get/${postId}`, {
+        const response = await fetch(`${api_url}/post/get/${postId}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'

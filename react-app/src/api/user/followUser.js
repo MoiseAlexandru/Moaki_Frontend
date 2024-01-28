@@ -1,7 +1,8 @@
+import api_url from "../config";
 
 export default async function followUser(sender, receiver, currentUser) {
     try {
-        const response = await fetch(`http://localhost:8080/user/follow/${sender}/${receiver}`, {
+        const response = await fetch(`${api_url}/user/follow/${sender}/${receiver}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

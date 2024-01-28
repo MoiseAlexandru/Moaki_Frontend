@@ -1,5 +1,6 @@
 
 import { locationList } from "../../dummydata";
+import api_url from "../config";
 
 
 export default async function locationFilter(query, controller) {
@@ -12,7 +13,7 @@ export default async function locationFilter(query, controller) {
     */
     try {
         console.log("query: ", query);
-        const response = await fetch(`http://localhost:8080/location/search/${query}`, {
+        const response = await fetch(`${api_url}/location/search/${query}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'

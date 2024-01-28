@@ -1,7 +1,8 @@
+import api_url from "../config";
 
 export async function fetchFeedPosts(username) {
     try {
-        const response = await fetch(`http://localhost:8080/post/userFeed/${username}`, {
+        const response = await fetch(`${api_url}/post/userFeed/${username}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

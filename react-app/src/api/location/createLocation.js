@@ -1,10 +1,11 @@
+import api_url from "../config";
 
 
 export default async function createLocation(name, address, city, country, locationString) {
     const location = {name, address, city, country, locationString};
     console.log(location)
     try {
-        const response = await fetch(`http://localhost:8080/location/add`, {
+        const response = await fetch(`${api_url}/location/add`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

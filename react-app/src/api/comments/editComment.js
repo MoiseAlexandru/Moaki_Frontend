@@ -1,7 +1,8 @@
+import api_url from "../config";
 
 export default async function editComment(commentId, newComment) {
     try {
-        const response = await fetch(`http://localhost:8080/comment/edit/${commentId}`, {
+        const response = await fetch(`${api_url}/comment/edit/${commentId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
