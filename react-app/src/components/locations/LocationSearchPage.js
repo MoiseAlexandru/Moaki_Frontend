@@ -19,9 +19,7 @@ export default function LocationSearchPage() {
     }
 
     async function handleLocationEnter(input, controller) {
-        console.log("input: ", input);
         const newDisplayedLocations = await locationFilter(input, controller);
-        console.log(newDisplayedLocations);
         setDisplayedLocations(newDisplayedLocations);
     }
 

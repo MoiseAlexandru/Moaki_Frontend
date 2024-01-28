@@ -6,7 +6,7 @@ export default async function userFilter(query, controller) {
         return [];
     
     try {
-        console.log("query: ", query);
+        
         const response = await fetch(`${api_url}/user/users`, {
             method: 'GET',
             headers: {
@@ -14,9 +14,9 @@ export default async function userFilter(query, controller) {
             },
             signal: controller ? controller.signal : null
         });
-        console.log(response)
+        
         const data = await response.json();
-        console.log(data);
+        
         const filterResults = data.filter((user) => user.username.toLowerCase().includes(query.toLowerCase()));
         return filterResults;
     }

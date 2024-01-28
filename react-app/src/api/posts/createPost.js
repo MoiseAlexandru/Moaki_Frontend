@@ -6,7 +6,6 @@ import api_url from "../config";
 export default async function createPost(postDetails, image) {
 
     const post = {...postDetails, image: image};
-    console.log(JSON.stringify(post));
     
     try {
         const response = await fetch(`${api_url}/post/add`, {

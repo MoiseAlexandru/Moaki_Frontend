@@ -2,7 +2,7 @@ import api_url from "../config";
 
 
 export default async function editPost(postId, newPost) {
-    console.log("new edited post:", newPost);
+    
     try {
         const response = await fetch(`${api_url}/post/edit/${postId}`, {
             method: 'PUT',

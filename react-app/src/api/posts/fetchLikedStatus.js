@@ -9,7 +9,7 @@ export async function fetchLikedStatus(postId, username) {
             }
         });
         const isLiked = await response.json();
-        console.log("isLiked", isLiked);
+        
         return isLiked;
     }
     catch(error) {

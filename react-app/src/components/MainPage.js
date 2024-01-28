@@ -15,7 +15,6 @@ import ProfilePage from "./users/ProfilePage";
 
 function LocationPageRouting() {
     const {id} = useParams();
-    console.log(id);
     return (
         <LocationPage locationId = {id} />
     )

@@ -13,8 +13,6 @@ export default function LocationInfo({locationId}) {
         fetchLocationData();
     }, [locationId]);
 
-    console.log(location);
-
     if(!location)
         return <div> Loading ... </div>
     return (

@@ -20,7 +20,6 @@ export default function RegisterPage({onRegister}) {
             return;
         }
         const hashedPassword = encryptPass(password);
-        console.log(hashedPassword);
         const res = await registerRequest(username, hashedPassword);
         if(res.status === 201) {
             navigate("/login");

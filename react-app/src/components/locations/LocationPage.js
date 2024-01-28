@@ -14,7 +14,6 @@ export default function LocationPage({locationId}) {
         fetchByLocation();
     }, [locationId]);
     
-    console.log("post list:", postList);
     return (
         <>
             <LocationInfo locationId = {locationId} />

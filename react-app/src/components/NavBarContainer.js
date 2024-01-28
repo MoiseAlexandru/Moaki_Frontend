@@ -14,7 +14,6 @@ export default function NavBarContainer({onLogout}) {
 
     function handleProfileClick() {
         const username = localStorage.getItem("username");
-        console.log(username);
         navigate(`/profile/${username}`);
     }
 

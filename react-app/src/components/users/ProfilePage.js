@@ -46,7 +46,7 @@ export default function ProfilePage({username}) {
     }, [username]);
 
     useEffect(function() {
-        console.log("user curent ", user);
+        
         if(user)
             setPhoto(user.image);
     }, [user])
@@ -62,7 +62,6 @@ export default function ProfilePage({username}) {
         await editUser(username, newUser);
     }
 
-    console.log(username)
     if(!user)
         return <div> Loading user   ... </div>;
     return (

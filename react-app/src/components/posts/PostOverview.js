@@ -64,13 +64,11 @@ export default function PostOverview({post, isExpanded}) {
 
     async function handleDelete() {
         const username = localStorage.getItem("username");
-        console.log("deleting post with id", post.id);
+        
         await deletePost(post, username);
         navigate(`/location/${post.locationId}`);
     }
 
-    console.log(post);
-    console.log(rating);
     async function handleSave() {
         await editPost(post.id, {...post, description: description, score: rating > 0 ? rating : initialRating});
         setIsEditing(false);

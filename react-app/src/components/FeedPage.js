@@ -15,9 +15,7 @@ export default function FeedPage() {
         async function fetchPosts() {
             if(username === "")
                 return;
-            console.log(username);
             const data = await fetchFeedPosts(username);
-            console.log(data);
             setPosts(data);
         }
         fetchPosts();

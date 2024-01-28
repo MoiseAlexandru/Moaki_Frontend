@@ -3,7 +3,6 @@ import api_url from "../config";
 
 export default async function fetchCommentById(commId) {
 
-    console.log("se cere commentul", commId);
     try {
         const response = await fetch(`${api_url}/comment/get/${commId}`, {
             method: 'GET',

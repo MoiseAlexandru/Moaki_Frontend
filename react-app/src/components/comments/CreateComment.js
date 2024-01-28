@@ -36,10 +36,6 @@ export default function CreateComment({post}) {
                 <textarea className = "commTextarea" onChange = {(e) => setContent(e.target.value)} />
                 <Button variant="commNowButton" onClick={handleSave}>Comment Now!</Button>
             </div>
-            <div>
-                Strict pt debug!
-                <Button variant = "danger" onClick = {() => handleDeleteAll()} > Sterge toate commenturile </Button>
-            </div>
         </div>
     );
 }

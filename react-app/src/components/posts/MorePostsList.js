@@ -19,7 +19,7 @@ export default function MorePostsList() {
                 return;
             setIsLoading(true);
             const res = await fetchMorePosts(username);
-            console.log(res);
+            
             setPosts(res);
             setIsLoading(false);
         }

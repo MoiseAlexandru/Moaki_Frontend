@@ -5,11 +5,10 @@ import api_url from "../config";
 export default async function createComment(commDetails, post, username) {
     
     const newCommentList = post.commentIds;
-    console.log("postul aici e ", post);
-    console.log("comm details id:", commDetails.id);
+    
     newCommentList.push(commDetails.id);
     const newPost = {...post, commentIds: newCommentList};
-    console.log(newPost);
+    
 
     try {
         const response1 = await fetch(`${api_url}/post/edit/${post.id}`, {
