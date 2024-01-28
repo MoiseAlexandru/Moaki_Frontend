@@ -5,9 +5,7 @@ import api_url from "../config";
 
 export default async function createPost(postDetails, image) {
 
-    const imageString = await imageToBase64(image);
-
-    const post = {...postDetails, image: imageString};
+    const post = {...postDetails, image: image};
     console.log(JSON.stringify(post));
     
     try {
