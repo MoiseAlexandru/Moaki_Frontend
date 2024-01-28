@@ -24,6 +24,7 @@ export default function PostPage({postId}) {
                 return;
             const commList = [];
             for(let commId of post.commentIds) {
+                console.log("commId: ", commId)
                 const comment = await fetchCommentById(commId);
                 if(comment)
                     commList.push(comment);
@@ -32,6 +33,7 @@ export default function PostPage({postId}) {
         }
         getComments();
     }, [post])
+    console.log("Comentarii: ", commentList)
 
     if(!post)
         return <div> Loading ... </div>

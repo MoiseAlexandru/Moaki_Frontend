@@ -107,7 +107,7 @@ export default function PostOverview({post, isExpanded}) {
                 <Col className = "postDetails">
                     {isExpanded === false ?
                     <>
-                        {location && <Row className = "postLocation" >📍{location.name} </Row>}
+                        {location && <Row className = "postLocation" >📍{location.name} {isExpanded && ` - ${location.city}, ${location.country}`} </Row>}
                         <Row className = "postCreator">👤 {post.username}</Row>
                         <Row className = "postDescription">📙 {post.description}</Row>
                     </>
