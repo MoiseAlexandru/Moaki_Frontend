@@ -19,13 +19,15 @@ export default async function locationFilter(query, controller) {
             },
             signal: controller ? controller.signal : null
         });
+        if(response.status > 200)
+            return [];
         const data = await response.json();
         return data;
     }
     catch(error) {
         if(error.name !== "AbortError") {
             console.log(error);
-            return null;
+            return [];
         }
     }
     return [];
