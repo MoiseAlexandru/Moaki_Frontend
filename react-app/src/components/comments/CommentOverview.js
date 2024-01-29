@@ -30,6 +30,7 @@ export default function CommentOverview({post, comment}) {
     async function handleSave() {
         setIsEditing(false);
         await editComment(comment.id, {...comment, content: textComment});
+        return;
         window.location.reload(false);
     }
 
